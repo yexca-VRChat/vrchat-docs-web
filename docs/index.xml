@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docs on yexca'Docs</title><link>https://vrchat.yexca.net/docs/</link><description>Recent content in Docs on yexca'Docs</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 03 Jun 2025 03:26:54 +0000</lastBuildDate><atom:link href="https://vrchat.yexca.net/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>目录</title><link>https://vrchat.yexca.net/home/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrchat.yexca.net/home/</guid><description>&lt;blockquote class="book-hint info">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docs on yexca'Docs</title><link>https://vrchat.yexca.net/docs/</link><description>Recent content in Docs on yexca'Docs</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 08 Sep 2025 10:02:29 +0000</lastBuildDate><atom:link href="https://vrchat.yexca.net/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>目录</title><link>https://vrchat.yexca.net/home/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrchat.yexca.net/home/</guid><description>&lt;blockquote class="book-hint info">
 &lt;p>&lt;strong>目录&lt;/strong>&lt;br>
 这里有什么呢？&lt;/p>
 &lt;/blockquote>
@@ -111,14 +111,14 @@ VRChat 的模型描述文件&lt;/p>
 &lt;/h2>
 &lt;p>在“层级”中选中模型名字即可在右方组件搜索添加“VRC Avatar Descriptor”&lt;/p>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-AvatarDescriptor/image.48d8ypvvpq00.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-AvatarDescriptor/image.48d8ypvvpq00.webp" alt="img" />&lt;/p>
 &lt;p>第一个为VRC的描述，第二个为蓝图&lt;/p>
 &lt;h2 id="一view">
  一、View
  &lt;a class="anchor" href="#%e4%b8%80view">#&lt;/a>
 &lt;/h2>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-AvatarDescriptor/image.3i0xx2om69e0.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-AvatarDescriptor/image.3i0xx2om69e0.webp" alt="img" />&lt;/p>
 &lt;p>用于调整视角球，即在游戏中看到的位置，一般放在两眼中间&lt;/p>
 &lt;p>点击“Edit”即可在“场景”中调整位置，调整完成后点击“Return”&lt;/p>
 &lt;h2 id="二lipsync">
@@ -127,18 +127,18 @@ VRChat 的模型描述文件&lt;/p>
 &lt;/h2>
 &lt;p>定义后模型可在开麦说话时开口&lt;/p>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-AvatarDescriptor/image.40e4lutgnbi0.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-AvatarDescriptor/image.40e4lutgnbi0.webp" alt="img" />&lt;/p>
 &lt;p>一般点击“Auto Detect!”可自动添加，如无法正常识别请手动添加&lt;/p>
 &lt;p>一般“Mode”为第四个“Viseme Blend Shape” ，然后将模型的“Body”或“Face”拖入“Face Mesh” ，一般情况如下 (如识别不出请手动选择)&lt;/p>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-AvatarDescriptor/image.5mxy376p4sk0.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-AvatarDescriptor/image.5mxy376p4sk0.webp" alt="img" />&lt;/p>
 &lt;p>若没有以上东西请禁用，即“Mode”选“默认”，或者自己研究骨骼实现&lt;/p>
 &lt;h2 id="三eye-look">
  三、Eye Look
  &lt;a class="anchor" href="#%e4%b8%89eye-look">#&lt;/a>
 &lt;/h2>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-AvatarDescriptor/image.12j6dlfdgibk.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-AvatarDescriptor/image.12j6dlfdgibk.webp" alt="img" />&lt;/p>
 &lt;p>眼部相关，点击“Enable”开始更改&lt;/p>
 &lt;h3 id="general">
  General
@@ -146,7 +146,7 @@ VRChat 的模型描述文件&lt;/p>
 &lt;/h3>
 &lt;p>全局设定眼部移动&lt;/p>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-AvatarDescriptor/image.2nr8oejxht60.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-AvatarDescriptor/image.2nr8oejxht60.webp" alt="img" />&lt;/p>
 &lt;p>“Calm-Excited”影响眨眼的频率&lt;/p>
 &lt;p>“Shy-Confident”影响自己的模型看向其他玩家模型的频率以及看向其他玩家时视线停留的时间&lt;/p>
 &lt;h3 id="eyes">
@@ -159,7 +159,7 @@ VRChat 的模型描述文件&lt;/p>
 &lt;/h4>
 &lt;p>定义眼骨的位置&lt;/p>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-AvatarDescriptor/image.3fvueycbkhw0.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-AvatarDescriptor/image.3fvueycbkhw0.webp" alt="img" />&lt;/p>
 &lt;p>找到相应骨骼拖入即可，如没有请跳过&lt;/p>
 &lt;h4 id="rotation-states">
  Rotation States
@@ -167,7 +167,7 @@ VRChat 的模型描述文件&lt;/p>
 &lt;/h4>
 &lt;p>定义眼部骨骼旋转的范围，只有当上一项填入眼骨才可用&lt;/p>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-AvatarDescriptor/image.5lbk2uslvks0.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-AvatarDescriptor/image.5lbk2uslvks0.webp" alt="img" />&lt;/p>
 &lt;p>定义向前，上，下，左，右看时眼睛的移动&lt;/p>
 &lt;p>点击“Preview”可进行编辑，可以在场景中进行旋转，点击“X”轴左方的链子可分别定义左右眼，当调整好后点击“Return”保存&lt;/p>
 &lt;h3 id="eyelids">
@@ -177,7 +177,7 @@ VRChat 的模型描述文件&lt;/p>
 &lt;p>定义闭眼，向上看和向下看&lt;/p></description></item><item><title>PhysBones</title><link>https://vrchat.yexca.net/dynamics/physbones/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrchat.yexca.net/dynamics/physbones/</guid><description>&lt;blockquote class="book-hint info">
 &lt;p>&lt;strong>PhysBones&lt;/strong>&lt;br>
 VRChat 动态骨骼系统&lt;br>
-令官方消息: &lt;em>原动骨插件最终将被全部移除，将全部自动转为新动骨&lt;/em>&lt;/p>
+另官方消息: &lt;em>原动骨插件最终将被全部移除，将全部自动转为新动骨&lt;/em>&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="关于自动转换">
  关于自动转换
@@ -197,7 +197,7 @@ VRChat 动态骨骼系统&lt;br>
  &lt;a class="anchor" href="#%e4%b8%80transforms">#&lt;/a>
 &lt;/h2>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/04-PhysBones/image.5l87k4hxtbk0.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/04-PhysBones/image.5l87k4hxtbk0.webp" alt="img" />&lt;/p>
 &lt;h3 id="root-transform">
  Root Transform
  &lt;a class="anchor" href="#root-transform">#&lt;/a>
@@ -229,9 +229,9 @@ VRChat 动态骨骼系统&lt;br>
  &lt;/tr>
  &lt;tr>
  &lt;td>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/04-PhysBones/image.5gd52p9c23g0.webp" alt="img" />&lt;/td>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/04-PhysBones/image.5gd52p9c23g0.webp" alt="img" />&lt;/td>
  &lt;td>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/04-PhysBones/image.9orxdswcog4.webp" alt="img" />&lt;/td>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/04-PhysBones/image.9orxdswcog4.webp" alt="img" />&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -282,7 +282,7 @@ VRChat 交互系统&lt;/p>
 &lt;/h2>
 &lt;p>定义发送信号的体积和参数(Collision Tags)&lt;/p>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/04-Contacts/image.ebh40gdczco.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/04-Contacts/image.ebh40gdczco.webp" alt="img" />&lt;/p>
 &lt;h3 id="root-transform">
  Root Transform
  &lt;a class="anchor" href="#root-transform">#&lt;/a>
@@ -313,7 +313,7 @@ VRChat 交互系统&lt;/p>
 &lt;/h2>
 &lt;p>定义接受信号的体积与参数(Collision Tags)，然后输出相应参数&lt;/p>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/04-Contacts/image.4zfxznntlkg0.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/04-Contacts/image.4zfxznntlkg0.webp" alt="img" />&lt;/p>
 &lt;h3 id="root-transform-1">
  Root Transform
  &lt;a class="anchor" href="#root-transform-1">#&lt;/a>
@@ -344,7 +344,7 @@ VRChat 交互系统&lt;/p>
  &lt;a class="anchor" href="#animator-layer-controller">#&lt;/a>
 &lt;/h2>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-StateBehaviors/image.6dk3lrhp6lc0.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-StateBehaviors/image.6dk3lrhp6lc0.webp" alt="img" />&lt;/p>
 &lt;p>可以改变某一图层的权重(权重为1时正常播放)&lt;/p>
 &lt;p>层权重将保持不变，直到某个其他状态再次运行此状态行为并将其重置&lt;/p>
 &lt;table>
@@ -382,7 +382,7 @@ VRChat 交互系统&lt;/p>
  &lt;a class="anchor" href="#animator-locomotion-control">#&lt;/a>
 &lt;/h2>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-StateBehaviors/image.7db4fkj18d80.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-StateBehaviors/image.7db4fkj18d80.webp" alt="img" />&lt;/p>
 &lt;p>在播放动画时禁用动作，位置被锁定&lt;/p>
 &lt;p>PC下只可上下移动视角，VR可自由移动，但模型不会动&lt;/p>
 &lt;p>此状态将一直保持，直到某个其他状态再次运行此状态行为并将其改变&lt;/p>
@@ -409,7 +409,7 @@ VRChat 交互系统&lt;/p>
  &lt;a class="anchor" href="#animator-temporary-pose-space">#&lt;/a>
 &lt;/h2>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-StateBehaviors/image.6ju2p7xy6nc0.webp" alt="img" />&lt;/p></description></item><item><title>Cloth</title><link>https://vrchat.yexca.net/div/cloth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrchat.yexca.net/div/cloth/</guid><description>&lt;blockquote class="book-hint info">
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-StateBehaviors/image.6ju2p7xy6nc0.webp" alt="img" />&lt;/p></description></item><item><title>Cloth</title><link>https://vrchat.yexca.net/div/cloth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrchat.yexca.net/div/cloth/</guid><description>&lt;blockquote class="book-hint info">
 &lt;p>&lt;strong>Cloth&lt;/strong>&lt;br>
 Unity 布料系统&lt;/p>
 &lt;/blockquote>
@@ -1305,6 +1305,8 @@ VRChat 的菜单有什么呢？&lt;/p>
  历史更新记录
  &lt;a class="anchor" href="#%e5%8e%86%e5%8f%b2%e6%9b%b4%e6%96%b0%e8%ae%b0%e5%bd%95">#&lt;/a>
 &lt;/h2>
+&lt;p>2025.09.08&lt;br>
+替换图片为 Github 直链&lt;/p>
 &lt;p>2025.01.23&lt;br>
 添加之前网站的链接，事实上原先的还保留着: 
  &lt;a href="https://docsifyvrchat.yexca.net/">https://docsifyvrchat.yexca.net/&lt;/a>&lt;br>

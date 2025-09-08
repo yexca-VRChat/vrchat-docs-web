@@ -14,7 +14,7 @@
 &lt;p>找到模型“FX层”，在图层“Left Hand”或“Right Hand”找到要修改的动画（可CTRL+D一个避免破坏原文件）&lt;/p>
 &lt;p>以右手的“Point”为例&lt;/p>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-EmoteAnim/image.4tnhuoe1z3s0.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-EmoteAnim/image.4tnhuoe1z3s0.webp" alt="img" />&lt;/p>
 &lt;h2 id="二修改动画">
  二、修改动画
  &lt;a class="anchor" href="#%e4%ba%8c%e4%bf%ae%e6%94%b9%e5%8a%a8%e7%94%bb">#&lt;/a>
@@ -24,7 +24,7 @@
 &lt;p>在制作多个表情时，请将所有表情涉及到的BlendShaper的值设为0(除当前表情使用的)，防止表情冲突
 图方便可以将所有BlendShaper设为0&lt;/p>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-EmoteAnim/image.14s44hc2egg0.webp" alt="img" />&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-EmoteAnim/image.14s44hc2egg0.webp" alt="img" />&lt;/p>
 &lt;h2 id="三后续">
  三、后续
  &lt;a class="anchor" href="#%e4%b8%89%e5%90%8e%e7%bb%ad">#&lt;/a>
@@ -110,8 +110,10 @@
  Pumkin&amp;rsquo;s Avatar Tools
  &lt;a class="anchor" href="#pumkins-avatar-tools">#&lt;/a>
 &lt;/h2>
-&lt;p>Github：https://github.com/rurre/PumkinsAvatarTools&lt;/p>
-&lt;p>文件直连：Github V1.1.1：https://github.com/rurre/PumkinsAvatarTools/releases/download/1.1.1/PumkinsAvatarTools_v1.1.1.unitypackage&lt;/p>
+&lt;p>Github：
+ &lt;a href="https://github.com/rurre/PumkinsAvatarTools">https://github.com/rurre/PumkinsAvatarTools&lt;/a>&lt;/p>
+&lt;p>文件直连：Github V1.1.1：
+ &lt;a href="https://github.com/rurre/PumkinsAvatarTools/releases/download/1.1.1/PumkinsAvatarTools_v1.1.1.unitypackage">PumkinsAvatarTools_v1.1.1.unitypackage&lt;/a>&lt;/p>
 &lt;h2 id="模型处理">
  模型处理
  &lt;a class="anchor" href="#%e6%a8%a1%e5%9e%8b%e5%a4%84%e7%90%86">#&lt;/a>

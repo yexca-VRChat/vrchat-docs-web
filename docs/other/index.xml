@@ -12,42 +12,30 @@ VRLabs 的东西真的很不错，可以看看其他的&lt;/p>
  前提
  &lt;a class="anchor" href="#%e5%89%8d%e6%8f%90">#&lt;/a>
 &lt;/h2>
-&lt;p>模型的数值可用位至少13&lt;/p>
+&lt;p>模型的数值可用位至少 13&lt;/p>
 &lt;p>模型的一级菜单至少一个可用位&lt;/p>
 &lt;h2 id="一导入">
  一、导入
  &lt;a class="anchor" href="#%e4%b8%80%e5%af%bc%e5%85%a5">#&lt;/a>
 &lt;/h2>
-&lt;p>下载解压后拖入即可，然后在项目“Assets-VRLabs-Marker”找到“Marker.cs”将其拖到“层级”中模型的名字上，然后点击模型名字即可在“检查器”看到脚本&lt;/p>
+&lt;p>下载解压后拖入即可，然后在项目 “Assets-VRLabs-Marker” 找到 “Marker.cs” 将其拖到 “层级” 中模型的名字上，然后点击模型名字即可在 “检查器” 看到脚本&lt;/p>
 &lt;h2 id="二简介">
  二、简介
  &lt;a class="anchor" href="#%e4%ba%8c%e7%ae%80%e4%bb%8b">#&lt;/a>
 &lt;/h2>
 &lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-VRLabsMarker/image.227jhy6gwfpc.webp" alt="img" />&lt;/p>
-&lt;p>**Avatar：**显示要加入的模型名字，可替换&lt;/p>
-&lt;p>**Left-handed：**装在左手上&lt;/p>
-&lt;p>**Write Defaults：**动画层的东西，意为进入下一个状态时是否重置上一个状态所做的更改&lt;/p>
-&lt;p>**Gesture to draw：**选择一个手势去写字，默认为point&lt;/p>
+ &lt;img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/03-VRLabsMarker/image.227jhy6gwfpc.webp" alt="img" />&lt;/p>
+&lt;p>&lt;strong>Avatar：&lt;/strong> 显示要加入的模型名字，可替换&lt;/p>
+&lt;p>&lt;strong>Left-handed：&lt;/strong> 装在左手上&lt;/p>
+&lt;p>&lt;strong>Write Defaults：&lt;/strong> 动画层的东西，意为进入下一个状态时是否重置上一个状态所做的更改&lt;/p>
+&lt;p>&lt;strong>Gesture to draw：&lt;/strong> 选择一个手势去写字，默认为 point&lt;/p>
 &lt;p>手势可参考：
  &lt;a href="https://vrchat.yexca.net/summary/parameters/#%E4%B8%89%E6%89%8B%E5%8A%BF%E5%AF%B9%E5%BA%94%E6%95%B0%E5%80%BC">数值&lt;/a>&lt;/p>
-&lt;p>**Adjustable brush size：**可调节画笔的大小&lt;/p>
-&lt;p>**Adjustable eraser size：**可调节橡皮擦的大小&lt;/p>
-&lt;p>**Use index finger to draw：**使用食指书写，启用则去掉笔&lt;/p>
-&lt;p>**Enable local space：**允许将画出来的东西放在身体某部位&lt;/p>
-&lt;p>**Half-Body：**上一项启用，允许放在半身，即头，手和胸&lt;/p>
-&lt;p>**Full-Body：**在Half-Body的基础上加上脚部&lt;/p>
-&lt;p>**Parameter memory bits needed：**需要数值大小，调整上方选项可能会改变&lt;/p>
-&lt;p>**Generate Marker：**开始&lt;/p>
-&lt;p>**Remove Marker：**移除&lt;/p>
-&lt;h2 id="三创建">
- 三、创建
- &lt;a class="anchor" href="#%e4%b8%89%e5%88%9b%e5%bb%ba">#&lt;/a>
-&lt;/h2>
-&lt;p>选择好后点击“Generate Marker” ，等待一会&lt;/p>
-&lt;p>
- &lt;img src="https://jsd.cdn.zzko.cn/gh/yexca/picx-images-hosting@master/2022-VRChat/03-VRLabsMarker/image.38b74nyenpy0.webp" alt="img" />&lt;/p>
-&lt;p>进入“播放”模式，在“Assets-VRLabs-Marker-Resources”找到控制器“M_Gesture”拖到模型控制器，然后点击脚本的第一个按钮“Adjust MarkerTarget transform”开始调整画笔的位置&lt;/p></description></item><item><title>Blender 换头</title><link>https://vrchat.yexca.net/other/blender_change_head/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrchat.yexca.net/other/blender_change_head/</guid><description>&lt;blockquote class="book-hint info">
+&lt;p>&lt;strong>Adjustable brush size：&lt;/strong> 可调节画笔的大小&lt;/p>
+&lt;p>&lt;strong>Adjustable eraser size：&lt;/strong> 可调节橡皮擦的大小&lt;/p>
+&lt;p>&lt;strong>Use index finger to draw：&lt;/strong> 使用食指书写，启用则去掉笔&lt;/p>
+&lt;p>&lt;strong>Enable local space：&lt;/strong> 允许将画出来的东西放在身体某部位&lt;/p>
+&lt;p>&lt;strong>Half-Body：&lt;/strong> 上一项启用，允许放在半身，即头，手和胸&lt;/p></description></item><item><title>Blender 换头</title><link>https://vrchat.yexca.net/other/blender_change_head/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vrchat.yexca.net/other/blender_change_head/</guid><description>&lt;blockquote class="book-hint info">
 &lt;p>&lt;strong>Blender 换头&lt;/strong>&lt;br>
 哪个男孩不想自由换头呢 (doge)&lt;/p>
 &lt;/blockquote>
