@@ -1,160 +1,463 @@
-<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
-Cloth
-Unity 布料系统
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-bguv2lll"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Cloth | yexca'Docs for VRChat</title><link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v5.16.8"/><meta name="generator" content="Starlight v0.37.2"/><meta property="og:title" content="Cloth"/><meta property="og:type" content="article"/><meta property="og:locale" content="en"/><meta property="og:site_name" content="yexca'Docs for VRChat"/><meta name="twitter:card" content="summary_large_image"/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/_astro/print.DNXP8c50.css" media="print"><link rel="stylesheet" href="/_astro/index.BGYTJlGT.css">
+<style>@layer starlight.components{:root{--sl-badge-default-border: var(--sl-color-accent);--sl-badge-default-bg: var(--sl-color-accent-low);--sl-badge-default-text: #fff;--sl-badge-note-border: var(--sl-color-blue);--sl-badge-note-bg: var(--sl-color-blue-low);--sl-badge-note-text: #fff;--sl-badge-danger-border: var(--sl-color-red);--sl-badge-danger-bg: var(--sl-color-red-low);--sl-badge-danger-text: #fff;--sl-badge-success-border: var(--sl-color-green);--sl-badge-success-bg: var(--sl-color-green-low);--sl-badge-success-text: #fff;--sl-badge-caution-border: var(--sl-color-orange);--sl-badge-caution-bg: var(--sl-color-orange-low);--sl-badge-caution-text: #fff;--sl-badge-tip-border: var(--sl-color-purple);--sl-badge-tip-bg: var(--sl-color-purple-low);--sl-badge-tip-text: #fff}[data-theme=light]:root{--sl-badge-default-bg: var(--sl-color-accent-high);--sl-badge-note-bg: var(--sl-color-blue-high);--sl-badge-danger-bg: var(--sl-color-red-high);--sl-badge-success-bg: var(--sl-color-green-high);--sl-badge-caution-bg: var(--sl-color-orange-high);--sl-badge-tip-bg: var(--sl-color-purple-high)}.sl-badge:where(.astro-avdet4wd){display:inline-block;border:1px solid var(--sl-color-border-badge);border-radius:.25rem;font-family:var(--sl-font-system-mono);line-height:normal;color:var(--sl-color-text-badge);background-color:var(--sl-color-bg-badge);overflow-wrap:anywhere}.sidebar-content .sl-badge:where(.astro-avdet4wd){line-height:1;font-size:var(--sl-text-xs);padding:.125rem .375rem}.sidebar-content a[aria-current=page]>.sl-badge:where(.astro-avdet4wd){--sl-color-bg-badge: transparent;--sl-color-border-badge: currentColor;color:inherit}.default:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-default-bg);--sl-color-border-badge: var(--sl-badge-default-border);--sl-color-text-badge: var(--sl-badge-default-text)}.note:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-note-bg);--sl-color-border-badge: var(--sl-badge-note-border);--sl-color-text-badge: var(--sl-badge-note-text)}.danger:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-danger-bg);--sl-color-border-badge: var(--sl-badge-danger-border);--sl-color-text-badge: var(--sl-badge-danger-text)}.success:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-success-bg);--sl-color-border-badge: var(--sl-badge-success-border);--sl-color-text-badge: var(--sl-badge-success-text)}.tip:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-tip-bg);--sl-color-border-badge: var(--sl-badge-tip-border);--sl-color-text-badge: var(--sl-badge-tip-text)}.caution:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-caution-bg);--sl-color-border-badge: var(--sl-badge-caution-border);--sl-color-text-badge: var(--sl-badge-caution-text)}.small:where(.astro-avdet4wd){font-size:var(--sl-text-xs);padding:.125rem .25rem}.medium:where(.astro-avdet4wd){font-size:var(--sl-text-sm);padding:.175rem .35rem}.large:where(.astro-avdet4wd){font-size:var(--sl-text-base);padding:.225rem .45rem}.sl-markdown-content :is(h1,h2,h3,h4,h5,h6) .sl-badge:where(.astro-avdet4wd){vertical-align:middle}}
+@layer starlight.components{.card:where(.astro-v5tidmuc){--sl-card-border: var(--sl-color-purple);--sl-card-bg: var(--sl-color-purple-low);border:1px solid var(--sl-color-gray-5);background-color:var(--sl-color-black);padding:clamp(1rem,calc(.125rem + 3vw),2.5rem);flex-direction:column;gap:clamp(.5rem,calc(.125rem + 1vw),1rem)}.card:where(.astro-v5tidmuc):nth-child(4n+1){--sl-card-border: var(--sl-color-orange);--sl-card-bg: var(--sl-color-orange-low)}.card:where(.astro-v5tidmuc):nth-child(4n+3){--sl-card-border: var(--sl-color-green);--sl-card-bg: var(--sl-color-green-low)}.card:where(.astro-v5tidmuc):nth-child(4n+4){--sl-card-border: var(--sl-color-red);--sl-card-bg: var(--sl-color-red-low)}.card:where(.astro-v5tidmuc):nth-child(4n+5){--sl-card-border: var(--sl-color-blue);--sl-card-bg: var(--sl-color-blue-low)}.title:where(.astro-v5tidmuc){font-weight:600;font-size:var(--sl-text-h4);color:var(--sl-color-white);line-height:var(--sl-line-height-headings);gap:1rem;align-items:center}.card:where(.astro-v5tidmuc) .icon:where(.astro-v5tidmuc){border:1px solid var(--sl-card-border);background-color:var(--sl-card-bg);padding:.2em;border-radius:.25rem;flex-shrink:0}.card:where(.astro-v5tidmuc) .body:where(.astro-v5tidmuc){margin:0;font-size:clamp(var(--sl-text-sm),calc(.5rem + 1vw),var(--sl-text-body))}}
+@layer starlight.components{svg:where(.astro-c6vsoqas){color:var(--sl-icon-color);font-size:var(--sl-icon-size, 1em);width:1em;height:1em}}
+@layer starlight.components{starlight-tabs:where(.astro-esqgolmp){display:block}.tablist-wrapper:where(.astro-esqgolmp){overflow-x:auto}:where(.astro-esqgolmp)[role=tablist]{display:flex;list-style:none;border-bottom:2px solid var(--sl-color-gray-5);padding:0}.tab:where(.astro-esqgolmp){display:flex}.tab:where(.astro-esqgolmp)>:where(.astro-esqgolmp)[role=tab]{--sl-tab-color-border: var(--sl-color-gray-5);display:flex;align-items:center;gap:.5rem;line-height:var(--sl-line-height-headings);padding:.275rem 1.25rem;text-decoration:none;box-shadow:0 2px 0 var(--sl-tab-color-border);color:var(--sl-color-gray-3);outline-offset:var(--sl-outline-offset-inside);overflow-wrap:initial}.tab:where(.astro-esqgolmp) :where(.astro-esqgolmp)[role=tab][aria-selected=true]{--sl-tab-color-border: var(--sl-color-text-accent);color:var(--sl-color-white);font-weight:600}.tablist-wrapper:where(.astro-esqgolmp)~[role=tabpanel]{margin-top:1rem}}
+@layer starlight.components{.sl-steps{--bullet-size: calc(var(--sl-line-height) * 1rem);--bullet-margin: .375rem;list-style:none;counter-reset:steps-counter var(--sl-steps-start, 0);padding-inline-start:0}.sl-steps>li{counter-increment:steps-counter;position:relative;padding-inline-start:calc(var(--bullet-size) + 1rem);padding-bottom:1px;min-height:calc(var(--bullet-size) + var(--bullet-margin))}.sl-steps>li+li{margin-top:0}.sl-steps>li:before{content:counter(steps-counter);position:absolute;top:0;inset-inline-start:0;width:var(--bullet-size);height:var(--bullet-size);line-height:var(--bullet-size);font-size:var(--sl-text-xs);font-weight:600;text-align:center;color:var(--sl-color-white);background-color:var(--sl-color-gray-6);border-radius:99rem;box-shadow:inset 0 0 0 1px var(--sl-color-gray-5)}.sl-steps>li:after{--guide-width: 1px;content:"";position:absolute;top:calc(var(--bullet-size) + var(--bullet-margin));bottom:var(--bullet-margin);inset-inline-start:calc((var(--bullet-size) - var(--guide-width)) / 2);width:var(--guide-width);background-color:var(--sl-color-hairline-light)}}@layer starlight.content{.sl-steps>li>:first-child{--lh: calc(1em * var(--sl-line-height));--shift-y: calc(.5 * (var(--bullet-size) - var(--lh)));transform:translateY(var(--shift-y));margin-bottom:var(--shift-y)}.sl-steps>li>:first-child:where(h1,h2,h3,h4,h5,h6){--lh: calc(1em * var(--sl-line-height-headings))}@supports (--prop: 1lh){.sl-steps>li>:first-child{--lh: 1lh}}}
+@layer starlight.components{.sl-link-button:where(.astro-xwgiixxa){align-items:center;border:1px solid transparent;border-radius:999rem;display:inline-flex;font-size:var(--sl-text-sm);gap:.5em;line-height:1.1875;outline-offset:.25rem;padding:.4375rem 1.125rem;text-decoration:none}.sl-link-button:where(.astro-xwgiixxa).primary{background:var(--sl-color-text-accent);border-color:var(--sl-color-text-accent);color:var(--sl-color-black)}.sl-link-button:where(.astro-xwgiixxa).primary:hover{color:var(--sl-color-black)}.sl-link-button:where(.astro-xwgiixxa).secondary{border-color:inherit;color:var(--sl-color-white)}.sl-link-button:where(.astro-xwgiixxa).minimal{color:var(--sl-color-white);padding-inline:0}.sl-link-button:where(.astro-xwgiixxa) svg{flex-shrink:0}@media(min-width:50rem){.sl-link-button:where(.astro-xwgiixxa){font-size:var(--sl-text-base);padding:.9375rem 1.25rem}}.sl-markdown-content .sl-link-button:where(.astro-xwgiixxa){margin-inline-end:1rem}.sl-markdown-content .sl-link-button:where(.astro-xwgiixxa):not(:where(p *)){margin-block:1rem}}
+</style><script type="module" src="/_astro/page.B1D-nYk3.js"></script></head> <body class="astro-bguv2lll"> <a href="#_top" class="astro-7q3lir66">Skip to content</a>  <div class="page sl-flex astro-vrdttmbt"> <header class="header astro-vrdttmbt"><div class="header astro-kmkmnagf"> <div class="title-wrapper sl-flex astro-kmkmnagf"> <a href="/" class="site-title sl-flex astro-m46x6ez3">  <span class="astro-m46x6ez3" translate="no"> yexca&#39;Docs for VRChat </span> </a>  </div> <div class="sl-flex print:hidden astro-kmkmnagf"> <site-search class="astro-kmkmnagf astro-v37mnknz" data-translations="{&#34;placeholder&#34;:&#34;Search&#34;}"> <button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-v37mnknz"> <svg aria-hidden="true" class="astro-v37mnknz astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg> <span class="sl-hidden md:sl-block astro-v37mnknz" aria-hidden="true">Search</span> <kbd class="sl-hidden md:sl-flex astro-v37mnknz" style="display: none;"> <kbd class="astro-v37mnknz">Ctrl</kbd><kbd class="astro-v37mnknz">K</kbd> </kbd> </button> <dialog style="padding:0" aria-label="Search" class="astro-v37mnknz"> <div class="dialog-frame sl-flex astro-v37mnknz">  <button data-close-modal class="sl-flex md:sl-hidden astro-v37mnknz"> Cancel </button> <div class="search-container astro-v37mnknz"> <div id="starlight__search" class="astro-v37mnknz"></div> </div> </div> </dialog> </site-search>  <script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script> <script type="module" src="/_astro/Search.astro_astro_type_script_index_0_lang.cjYDvRdi.js"></script>   </div> <div class="sl-hidden md:sl-flex print:hidden right-group astro-kmkmnagf"> <div class="sl-flex social-icons astro-kmkmnagf"> <a href="https://github.com/yexca-VRChat/vrchat-docs-source" rel="me" class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">Select theme</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">Dark</option><option value="light" class="astro-4yphtoen">Light</option><option value="auto" selected class="astro-4yphtoen">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script> <script type="module">const r="starlight-theme",o=e=>e==="auto"||e==="dark"||e==="light"?e:"auto",c=()=>o(typeof localStorage<"u"&&localStorage.getItem(r));function n(e){typeof localStorage<"u"&&localStorage.setItem(r,e==="light"||e==="dark"?e:"")}const l=()=>matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";function t(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e==="auto"?l():e,n(e)}matchMedia("(prefers-color-scheme: light)").addEventListener("change",()=>{c()==="auto"&&t("auto")});class s extends HTMLElement{constructor(){super(),t(c()),this.querySelector("select")?.addEventListener("change",a=>{a.currentTarget instanceof HTMLSelectElement&&t(o(a.currentTarget.value))})}}customElements.define("starlight-theme-select",s);</script> <script type="module">class s extends HTMLElement{constructor(){super();const e=this.querySelector("select");e&&(e.addEventListener("change",t=>{t.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=t.currentTarget.value)}),window.addEventListener("pageshow",t=>{if(!t.persisted)return;const n=e.querySelector("option[selected]")?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}}customElements.define("starlight-lang-select",s);</script> </div> </div> </header> <nav class="sidebar print:hidden astro-vrdttmbt" aria-label="Main"> <starlight-menu-button class="print:hidden astro-jif73yzw"> <button aria-expanded="false" aria-label="Menu" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-jif73yzw"> <svg aria-hidden="true" class="open-menu astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg> <svg aria-hidden="true" class="close-menu astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg> </button> </starlight-menu-button> <script type="module">class s extends HTMLElement{constructor(){super(),this.btn=this.querySelector("button"),this.btn.addEventListener("click",()=>this.toggleExpanded());const t=this.closest("nav");t&&t.addEventListener("keyup",e=>this.closeOnEscape(e))}setExpanded(t){this.setAttribute("aria-expanded",String(t)),document.body.toggleAttribute("data-mobile-menu-expanded",t)}toggleExpanded(){this.setExpanded(this.getAttribute("aria-expanded")!=="true")}closeOnEscape(t){t.code==="Escape"&&(this.setExpanded(!1),this.btn.focus())}}customElements.define("starlight-menu-button",s);</script>   <div id="starlight__sidebar" class="sidebar-pane astro-vrdttmbt"> <div class="sidebar-content sl-flex astro-vrdttmbt"> <sl-sidebar-state-persist data-hash="0nw2vp6" class="astro-kku4brbg"> <script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script>  <ul class="top-level astro-3ii7xxms"> <li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">板块</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="0"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/home/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">目录</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/div/vrc_avatar_descriptor/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">VRC Avatar Descriptor</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/dynamics/physbones/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">PhysBones</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/dynamics/contacts/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Contacts</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/div/state_behaviors/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">State Behaviors</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/div/cloth/" aria-current="page" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Cloth</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/div/particle_system/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Particle System</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/div/trail_renderer/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Trail Renderer</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/summary/anime/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Animation</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/summary/parameters/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Parameters</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/summary/layers/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Animator Layers</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/summary/menu/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">VRChat Menu</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">上传</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="1"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/upload/prepare/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">上传前准备</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/upload/upload/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">成品模型上传</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/upload/mmd_to_fbx/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">MMD 模型转为 FBX</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/upload/mmd_upload/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">MMD 模型上传</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/upload/sdk2_to_sdk3/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">SDK2 转为 SDK3</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">修改</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="2"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/editing/playable_layers/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">添加默认图层与菜单</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/editing/base/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Base 层-蹲姿，趴姿</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/editing/afk/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Action 层-AFK</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/editing/switch/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">FX 层-物品开关</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">附加</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="3"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/additional/tied_bones/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">物体绑骨</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/additional/change_clothes/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">换衣服</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/additional/set_object/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">固定世界物品</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/additional/set_mmd/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">固定世界 MMD</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/additional/gesture/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">手势开关</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">表情</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="4"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/emote/emote_anim/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">添加手势表情</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/emote/add_blendershapes/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Blender 添加形态键</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/emote/pumkin_tools/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">一键复制</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">脚本</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="5"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/script/self_mmd/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">自身跳 MMD 舞蹈</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/script/shuffle_playback/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">随机播放音乐</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/script/play_in_order/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">顺序播放音乐</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/script/start/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">出场动画</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">其他</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="6"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/other/vrlabs_marker/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">添加一个可以写字的笔</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/other/blender_change_head/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Blender 换头</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/other/pc_arm_moving/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">PC 下移动手</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">关于</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="7"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/about/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">关于</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/references/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">参考资料</span>  </a> </li> </ul>  </details> </li> </ul>   <script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script> </sl-sidebar-state-persist>  <div class="md:sl-hidden"> <div class="mobile-preferences sl-flex astro-wu23bvmt"> <div class="social-icons astro-wu23bvmt"> <a href="https://github.com/yexca-VRChat/vrchat-docs-source" rel="me" class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">Select theme</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">Dark</option><option value="light" class="astro-4yphtoen">Light</option><option value="auto" selected class="astro-4yphtoen">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script>   </div>  </div> </div> </div> </nav> <div class="main-frame astro-vrdttmbt">  <script type="module">const a=document.getElementById("starlight__sidebar"),n=a?.querySelector("sl-sidebar-state-persist"),o="sl-sidebar-state",i=()=>{let t=[];const e=n?.dataset.hash||"";try{const s=sessionStorage.getItem(o),r=JSON.parse(s||"{}");Array.isArray(r.open)&&r.hash===e&&(t=r.open)}catch{}return{hash:e,open:t,scroll:a?.scrollTop||0}},c=t=>{try{sessionStorage.setItem(o,JSON.stringify(t))}catch{}},d=()=>c(i()),l=(t,e)=>{const s=i();s.open[e]=t,c(s)};n?.addEventListener("click",t=>{if(!(t.target instanceof Element))return;const e=t.target.closest("summary")?.closest("details");if(!e)return;const s=e.querySelector("sl-sidebar-restore"),r=parseInt(s?.dataset.index||"");isNaN(r)||l(!e.open,r)});addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"&&d()});addEventListener("pageHide",d);</script> <div class="lg:sl-flex astro-67yu43on"> <aside class="right-sidebar-container print:hidden astro-67yu43on"> <div class="right-sidebar astro-67yu43on"> <div class="lg:sl-hidden astro-pb3aqygn"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-doynk5tl"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-doynk5tl"><details id="starlight__mobile-toc" class="astro-doynk5tl"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-doynk5tl"><span class="toggle sl-flex astro-doynk5tl">On this page<svg aria-hidden="true" class="caret astro-doynk5tl astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-doynk5tl"></span></summary><div class="dropdown astro-doynk5tl"><ul class="isMobile astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#网格与骨骼权重处理" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">网格与骨骼权重处理</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#如何缝合网格" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">如何缝合网格？</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#添加布料" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">添加布料</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#edit-cloth-constraints编辑约束" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Edit cloth constraints(编辑约束)</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#cloth-constraints" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Cloth Constraints</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#约束类型与颜色" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">约束类型与颜色</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#约束版本模式" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">约束版本模式</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#edit-cloth-selfinter-collision编辑自碰撞与互碰撞" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Edit cloth self/inter-collision(编辑自碰撞与互碰撞)</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#cloth-self-collision-and-inter-collision" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Cloth Self-Collision and Inter-Collision</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#颜色" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">颜色</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#应用" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">应用</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#paint-与-erase" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Paint 与 Erase</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#互碰撞" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">互碰撞</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#注意" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">注意</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#检查器属性" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">检查器属性</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#碰撞" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">碰撞</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#胶囊碰撞体" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">胶囊碰撞体</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#球形碰撞体与锥体" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">球形碰撞体与锥体</span> </a>  </li> </ul>  </li> </ul> </div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C181hMzK.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-pb3aqygn"><div class="sl-container astro-pb3aqygn"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#网格与骨骼权重处理" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">网格与骨骼权重处理</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#如何缝合网格" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">如何缝合网格？</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#添加布料" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">添加布料</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#edit-cloth-constraints编辑约束" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Edit cloth constraints(编辑约束)</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#cloth-constraints" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Cloth Constraints</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#约束类型与颜色" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">约束类型与颜色</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#约束版本模式" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">约束版本模式</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#edit-cloth-selfinter-collision编辑自碰撞与互碰撞" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Edit cloth self/inter-collision(编辑自碰撞与互碰撞)</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#cloth-self-collision-and-inter-collision" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Cloth Self-Collision and Inter-Collision</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#颜色" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">颜色</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#应用" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">应用</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#paint-与-erase" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Paint 与 Erase</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#互碰撞" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">互碰撞</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#注意" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">注意</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#检查器属性" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">检查器属性</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#碰撞" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">碰撞</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#胶囊碰撞体" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">胶囊碰撞体</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#球形碰撞体与锥体" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">球形碰撞体与锥体</span> </a>  </li> </ul>  </li> </ul> </nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.CKWWgpjV.js"></script></div></div> </div> </aside> <div class="main-pane astro-67yu43on">  <main data-pagefind-body class="astro-bguv2lll" lang="en" dir="ltr">    <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <h1 id="_top" class="astro-j6tvhyss">Cloth</h1>  </div> </div>  <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <div class="sl-markdown-content"> <blockquote>
+<p>Unity 布料系统</p>
+</blockquote>
+<p><code dir="auto">布料(Cloth)</code>组件与<code dir="auto">带蒙皮的网格渲染器(Skinned Mesh Renderer)</code>协同工作，从而提供基于物理的面料模拟解决方案。此组件是专为角色服装设计的，仅对蒙皮网格有效。如果向非蒙皮网格中添加<code dir="auto">Cloth</code>组件，则 Unity 会删除非蒙皮网格并添加蒙皮网格。</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="网格与骨骼权重处理">网格与骨骼权重处理</h2><a class="sl-anchor-link" href="#网格与骨骼权重处理"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “网格与骨骼权重处理”</span></a></div>
+<p>因为布料与动骨是不同的系统，为了共存需要做相应的处理</p>
+<p>大致为以下要求</p>
+<ul>
+<li>单层网格</li>
+</ul>
+<p>确保衣服是单层的</p>
+<ul>
+<li>缝合网格</li>
+</ul>
+<p>确保衣服是完整的</p>
+<ul>
+<li>分离干扰</li>
+</ul>
+<p>衣服上的小配件可能会对布料模拟有所干扰</p>
+<ul>
+<li>四边形网格</li>
+</ul>
+<p>如果衣服为三角形网格，可能不会有太好的模拟效果</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="如何缝合网格">如何缝合网格？</h3><a class="sl-anchor-link" href="#如何缝合网格"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “如何缝合网格？”</span></a></div>
+<p>在 Blender 中删除合并重叠点。顶部菜单<code dir="auto">网格-清理-按距离合并</code>左下角<code dir="auto">按间距合并</code>，通过修改增大<code dir="auto">合并间距</code>的数值让两个距离相邻的两个点合并。快捷键：<code dir="auto">M</code></p>
+<div class="sl-heading-wrapper level-h2"><h2 id="添加布料">添加布料</h2><a class="sl-anchor-link" href="#添加布料"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “添加布料”</span></a></div>
+<p>在<code dir="auto">Inspector</code>窗口中单击<code dir="auto">Add Component</code>按钮，然后选择 <code dir="auto">Physics</code>-<code dir="auto">Cloth</code></p>
+<div class="sl-heading-wrapper level-h2"><h2 id="edit-cloth-constraints编辑约束">Edit cloth constraints(编辑约束)</h2><a class="sl-anchor-link" href="#edit-cloth-constraints编辑约束"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Edit cloth constraints(编辑约束)”</span></a></div>
+<p>您可以将约束应用于布料的特定顶点，以增加或减少这些顶点的移动自由度。</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="cloth-constraints">Cloth Constraints</h3><a class="sl-anchor-link" href="#cloth-constraints"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Cloth Constraints”</span></a></div>
 
-布料(Cloth)组件与带蒙皮的网格渲染器(Skinned Mesh Renderer)协同工作，从而提供基于物理的面料模拟解决方案。此组件是专为角色服装设计的，仅对蒙皮网格有效。如果向非蒙皮网格中添加Cloth组件，则 Unity 会删除非蒙皮网格并添加蒙皮网格。
-
-  网格与骨骼权重处理
-  #
-
-因为布料与动骨是不同的系统，为了共存需要做相应的处理
-大致为以下要求
-
-单层网格
-
-确保衣服是单层的
-
-缝合网格
-
-确保衣服是完整的
-
-分离干扰
-
-衣服上的小配件可能会对布料模拟有所干扰
-
-四边形网格
-
-如果衣服为三角形网格，可能不会有太好的模拟效果
-
-  如何缝合网格？
-  #
-
-在Blender中删除合并重叠点。顶部菜单网格-清理-按距离合并左下角按间距合并，通过修改增大合并间距的数值让两个距离相邻的两个点合并。快捷键：M
-
-  添加布料
-  #
-
-在Inspector窗口中单击Add Component按钮，然后选择 Physics-Cloth
-
-  Edit cloth constraints(编辑约束)
-  #
-
-您可以将约束应用于布料的特定顶点，以增加或减少这些顶点的移动自由度。
-
-  Cloth Constraints
-  #
 
 
-  
-      
-          属性
-          选项
-          功能
-      
-  
-  
-      
-          Visualization
-          
-          选择要显示的约束类型和粒子。
-      
-      
-          
-          Max Distance
-          仅显示布料粒子的 Max Distance 值。
-      
-      
-          
-          Surface Penetration
-          仅显示布料粒子的 Surface Penetration 值。
-      
-      
-          
-          Manipulate Backfaces
-          启用此选项可以可视化和操控可能隐藏在布料当前朝向部分后面的粒子。
-      
-      
-          [ 色谱 ]
-          
-          根据当前在整块布料中应用的最小值和最大值，为上述选定的约束类型提供粒子颜色和约束值之间的对应关系。黑色始终表示粒子没有约束。
-      
-      
-          Constraint Size
-          
-          代表布料粒子的球体的显示大小。在方便时可以调整此值以便简化约束版本。这个属性对约束本身没有任何影响。
-      
-  
 
 
-  约束类型与颜色
-  #
 
 
-  
-      
-          约束类型
-          描述
-      
-  
-  
-      
-          Max Distance
-          布料可以从顶点位置行进的最大距离
-      
-      
-          Surface Penetration
-          布料粒子可穿透网格的深度
-      
-  
 
-根据在Visualization所选类型，粒子的颜色表示该粒子的约束在布料内的相对值"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://vrchat.yexca.net/div/cloth/"><meta property="og:site_name" content="yexca'Docs"><meta property="og:title" content="Cloth"><meta property="og:description" content="Cloth
-Unity 布料系统
-布料(Cloth)组件与带蒙皮的网格渲染器(Skinned Mesh Renderer)协同工作，从而提供基于物理的面料模拟解决方案。此组件是专为角色服装设计的，仅对蒙皮网格有效。如果向非蒙皮网格中添加Cloth组件，则 Unity 会删除非蒙皮网格并添加蒙皮网格。
-网格与骨骼权重处理 # 因为布料与动骨是不同的系统，为了共存需要做相应的处理
-大致为以下要求
-单层网格 确保衣服是单层的
-缝合网格 确保衣服是完整的
-分离干扰 衣服上的小配件可能会对布料模拟有所干扰
-四边形网格 如果衣服为三角形网格，可能不会有太好的模拟效果
-如何缝合网格？ # 在Blender中删除合并重叠点。顶部菜单网格-清理-按距离合并左下角按间距合并，通过修改增大合并间距的数值让两个距离相邻的两个点合并。快捷键：M
-添加布料 # 在Inspector窗口中单击Add Component按钮，然后选择 Physics-Cloth
-Edit cloth constraints(编辑约束) # 您可以将约束应用于布料的特定顶点，以增加或减少这些顶点的移动自由度。
-Cloth Constraints # 属性 选项 功能 Visualization 选择要显示的约束类型和粒子。 Max Distance 仅显示布料粒子的 Max Distance 值。 Surface Penetration 仅显示布料粒子的 Surface Penetration 值。 Manipulate Backfaces 启用此选项可以可视化和操控可能隐藏在布料当前朝向部分后面的粒子。 [ 色谱 ] 根据当前在整块布料中应用的最小值和最大值，为上述选定的约束类型提供粒子颜色和约束值之间的对应关系。黑色始终表示粒子没有约束。 Constraint Size 代表布料粒子的球体的显示大小。在方便时可以调整此值以便简化约束版本。这个属性对约束本身没有任何影响。 约束类型与颜色 # 约束类型 描述 Max Distance 布料可以从顶点位置行进的最大距离 Surface Penetration 布料粒子可穿透网格的深度 根据在Visualization所选类型，粒子的颜色表示该粒子的约束在布料内的相对值"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2025-09-08T10:02:29+00:00"><title>Cloth | yexca'Docs</title>
-<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=https://vrchat.yexca.net/div/cloth/><link rel=stylesheet href=/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/zh-cn.search.min.eb085b29d9ae9f4fb58017d1a2821fb6061ec230751676c9f494b7a0c31daea4.js integrity="sha256-6whbKdmun0+1gBfRooIftgYewjB1FnbJ9JS3oMMdrqQ=" crossorigin=anonymous></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>yexca'Docs</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=这里有什么东西呢？ aria-label=这里有什么东西呢？ maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/home/>目录</a></li><li><a href=/div/vrc_avatar_descriptor/>VRC Avatar Descriptor</a></li><li><a href=/dynamics/physbones/>PhysBones</a></li><li><a href=/dynamics/contacts/>Contacts</a></li><li><a href=/div/state_behaviors/>State Behaviors</a></li><li><a href=/div/cloth/ class=active>Cloth</a></li><li><a href=/div/particle_system/>Particle System</a></li><li><a href=/div/trail_renderer/>Trail Renderer</a></li><li><a href=/summary/anime/>Animation</a></li><li><a href=/summary/parameters/>Parameters</a></li><li><a href=/summary/layers/>Animator Layers</a></li><li><a href=/summary/menu/>VRChat Menu</a></li><li><input type=checkbox id=section-f949c0b626326c6ae65569c8906a4c3a class=toggle>
-<label for=section-f949c0b626326c6ae65569c8906a4c3a class="flex justify-between"><a role=button>上传</a></label><ul><li><a href=/upload/prepare/>上传前准备</a></li><li><a href=/upload/upload/>成品模型上传</a></li><li><a href=/upload/mmd_to_fbx/>MMD 模型转为 FBX</a></li><li><a href=/upload/mmd_upload/>MMD 模型上传</a></li><li><a href=/upload/sdk2_to_sdk3/>SDK2 转为 SDK3</a></li></ul></li><li><input type=checkbox id=section-5166a3eb3b7526fcc8ad7fe083d864fa class=toggle>
-<label for=section-5166a3eb3b7526fcc8ad7fe083d864fa class="flex justify-between"><a role=button>修改</a></label><ul><li><a href=/editing/playable_layers/>添加默认图层与菜单</a></li><li><a href=/editing/base/>Base 层-蹲姿，趴姿</a></li><li><a href=/editing/afk/>Action 层 - AFK</a></li><li><a href=/editing/switch/>FX 层 - 物品开关</a></li></ul></li><li><input type=checkbox id=section-751509be1549a184fb406816851b0866 class=toggle>
-<label for=section-751509be1549a184fb406816851b0866 class="flex justify-between"><a role=button>附加</a></label><ul><li><a href=/additional/tied_bones/>物体绑骨</a></li><li><a href=/additional/change_clothes/>换衣服</a></li><li><a href=/additional/set_object/>固定世界物品</a></li><li><a href=/additional/set_mmd/>固定世界 MMD</a></li><li><a href=/additional/gesture/>手势开关</a></li></ul></li><li><input type=checkbox id=section-856fa41637419b4399e55ea213fa785c class=toggle>
-<label for=section-856fa41637419b4399e55ea213fa785c class="flex justify-between"><a role=button>表情</a></label><ul><li><a href=/emote/emote_anim/>添加手势表情</a></li><li><a href=/emote/add_blendershapes/>Blender 添加形态键</a></li><li><a href=/emote/pumkin_tools/>一键复制</a></li></ul></li><li><input type=checkbox id=section-77614fc9121052766a40fbcac7d89b29 class=toggle>
-<label for=section-77614fc9121052766a40fbcac7d89b29 class="flex justify-between"><a role=button>脚本</a></label><ul><li><a href=/script/self_mmd/>自身跳 MMD 舞蹈</a></li><li><a href=/script/shuffle_playback/>随机播放音乐</a></li><li><a href=/script/play_in_order/>顺序播放音乐</a></li><li><a href=/script/start/>出场动画</a></li></ul></li><li><input type=checkbox id=section-7e30d2fa3006f8f37819dc1d07f0fe16 class=toggle>
-<label for=section-7e30d2fa3006f8f37819dc1d07f0fe16 class="flex justify-between"><a role=button>其他</a></label><ul><li><a href=/other/vrlabs_marker/>添加一个可以写字的笔</a></li><li><a href=/other/blender_change_head/>Blender 换头</a></li><li><a href=/other/pc_arm_moving/>PC 下移动手</a></li></ul></li><li><a href=/about/>关于</a></li><li><a href=/references/>参考资料</a></li></ul><ul><li><a href=https://github.com/yexca-VRChat/vrchat-docs-source target=_blank rel=noopener>Github</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Cloth</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><ul><li><a href=#网格与骨骼权重处理>网格与骨骼权重处理</a><ul><li><a href=#如何缝合网格>如何缝合网格？</a></li></ul></li><li><a href=#添加布料>添加布料</a></li><li><a href=#edit-cloth-constraints编辑约束>Edit cloth constraints(编辑约束)</a><ul><li><a href=#cloth-constraints>Cloth Constraints</a></li><li><a href=#约束类型与颜色>约束类型与颜色</a></li><li><a href=#约束版本模式>约束版本模式</a></li></ul></li><li><a href=#edit-cloth-selfinter-collision编辑自碰撞与互碰撞>Edit cloth self/inter-collision(编辑自碰撞与互碰撞)</a><ul><li><a href=#cloth-self-collision-and-inter-collision>Cloth Self-Collision and Inter-Collision</a></li><li><a href=#颜色>颜色</a></li><li><a href=#应用>应用</a></li><li><a href=#paint与erase>Paint与Erase</a></li><li><a href=#互碰撞>互碰撞</a></li><li><a href=#注意>注意</a></li></ul></li><li><a href=#检查器属性>检查器属性</a></li><li><a href=#碰撞>碰撞</a><ul><li><a href=#胶囊碰撞体>胶囊碰撞体</a></li><li><a href=#球形碰撞体与锥体>球形碰撞体与锥体</a></li></ul></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><blockquote class="book-hint info"><p><strong>Cloth</strong><br>Unity 布料系统</p></blockquote><p><code>布料(Cloth)</code>组件与<code>带蒙皮的网格渲染器(Skinned Mesh Renderer)</code>协同工作，从而提供基于物理的面料模拟解决方案。此组件是专为角色服装设计的，仅对蒙皮网格有效。如果向非蒙皮网格中添加<code>Cloth</code>组件，则 Unity 会删除非蒙皮网格并添加蒙皮网格。</p><h2 id=网格与骨骼权重处理>网格与骨骼权重处理
-<a class=anchor href=#%e7%bd%91%e6%a0%bc%e4%b8%8e%e9%aa%a8%e9%aa%bc%e6%9d%83%e9%87%8d%e5%a4%84%e7%90%86>#</a></h2><p>因为布料与动骨是不同的系统，为了共存需要做相应的处理</p><p>大致为以下要求</p><ul><li>单层网格</li></ul><p>确保衣服是单层的</p><ul><li>缝合网格</li></ul><p>确保衣服是完整的</p><ul><li>分离干扰</li></ul><p>衣服上的小配件可能会对布料模拟有所干扰</p><ul><li>四边形网格</li></ul><p>如果衣服为三角形网格，可能不会有太好的模拟效果</p><h3 id=如何缝合网格>如何缝合网格？
-<a class=anchor href=#%e5%a6%82%e4%bd%95%e7%bc%9d%e5%90%88%e7%bd%91%e6%a0%bc>#</a></h3><p>在Blender中删除合并重叠点。顶部菜单<code>网格-清理-按距离合并</code>左下角<code>按间距合并</code>，通过修改增大<code>合并间距</code>的数值让两个距离相邻的两个点合并。快捷键：<code>M</code></p><h2 id=添加布料>添加布料
-<a class=anchor href=#%e6%b7%bb%e5%8a%a0%e5%b8%83%e6%96%99>#</a></h2><p>在<code>Inspector</code>窗口中单击<code>Add Component</code>按钮，然后选择 <code>Physics</code>-<code>Cloth</code></p><h2 id=edit-cloth-constraints编辑约束>Edit cloth constraints(编辑约束)
-<a class=anchor href=#edit-cloth-constraints%e7%bc%96%e8%be%91%e7%ba%a6%e6%9d%9f>#</a></h2><p>您可以将约束应用于布料的特定顶点，以增加或减少这些顶点的移动自由度。</p><h3 id=cloth-constraints>Cloth Constraints
-<a class=anchor href=#cloth-constraints>#</a></h3><table><thead><tr><th style=text-align:left>属性</th><th style=text-align:left>选项</th><th>功能</th></tr></thead><tbody><tr><td style=text-align:left><strong>Visualization</strong></td><td style=text-align:left></td><td>选择要显示的约束类型和粒子。</td></tr><tr><td style=text-align:left></td><td style=text-align:left><em>Max Distance</em></td><td>仅显示布料粒子的 Max Distance 值。</td></tr><tr><td style=text-align:left></td><td style=text-align:left><em>Surface Penetration</em></td><td>仅显示布料粒子的 Surface Penetration 值。</td></tr><tr><td style=text-align:left></td><td style=text-align:left><em>Manipulate Backfaces</em></td><td>启用此选项可以可视化和操控可能隐藏在布料当前朝向部分后面的粒子。</td></tr><tr><td style=text-align:left>[ 色谱 ]</td><td style=text-align:left></td><td>根据当前在整块布料中应用的最小值和最大值，为上述选定的约束类型提供粒子颜色和约束值之间的对应关系。黑色始终表示粒子没有约束。</td></tr><tr><td style=text-align:left><strong>Constraint Size</strong></td><td style=text-align:left></td><td>代表布料粒子的球体的显示大小。在方便时可以调整此值以便简化约束版本。这个属性对约束本身没有任何影响。</td></tr></tbody></table><h3 id=约束类型与颜色>约束类型与颜色
-<a class=anchor href=#%e7%ba%a6%e6%9d%9f%e7%b1%bb%e5%9e%8b%e4%b8%8e%e9%a2%9c%e8%89%b2>#</a></h3><table><thead><tr><th>约束类型</th><th>描述</th></tr></thead><tbody><tr><td>Max Distance</td><td>布料可以从顶点位置行进的最大距离</td></tr><tr><td>Surface Penetration</td><td>布料粒子可穿透网格的深度</td></tr></tbody></table><p>根据在<code>Visualization</code>所选类型，粒子的颜色表示该粒子的约束在布料内的相对值</p><h3 id=约束版本模式>约束版本模式
-<a class=anchor href=#%e7%ba%a6%e6%9d%9f%e7%89%88%e6%9c%ac%e6%a8%a1%e5%bc%8f>#</a></h3><p>一共可以使用三种不同模式来编辑布料的约束值</p><h4 id=1select>1）Select
-<a class=anchor href=#1select>#</a></h4><blockquote><p>将固定约束值应用于已选择的粒子组</p></blockquote><p>使用鼠标框选后，启用要应用于选定项的约束类型然后设定一个值即可</p><h4 id=2paint>2）Paint
-<a class=anchor href=#2paint>#</a></h4><blockquote><p>通过用画笔绘制布料粒子来施加固定的约束值</p></blockquote><p>根据需要调整<code>Brush Radius</code>，启用要应用的约束类型并设置一个绘制值后用画笔在粒子上绘制约束</p><h4 id=3gradient>3）Gradient
-<a class=anchor href=#3gradient>#</a></h4><blockquote><p>将约束值从左到右线性渐变应用于预先选择的粒子组</p></blockquote><p><strong>需先确保在<code>场景</code>视图中开启<code>2D</code>视图</strong></p><p>使用鼠标框选后，设置范围，然后选择要应用的约束类型</p><h2 id=edit-cloth-selfinter-collision编辑自碰撞与互碰撞>Edit cloth self/inter-collision(编辑自碰撞与互碰撞)
-<a class=anchor href=#edit-cloth-selfinter-collision%e7%bc%96%e8%be%91%e8%87%aa%e7%a2%b0%e6%92%9e%e4%b8%8e%e4%ba%92%e7%a2%b0%e6%92%9e>#</a></h2><ul><li>自碰撞：防止布料穿透自身</li><li>互碰撞：允许布料粒子相互碰撞</li></ul><h3 id=cloth-self-collision-and-inter-collision>Cloth Self-Collision and Inter-Collision
-<a class=anchor href=#cloth-self-collision-and-inter-collision>#</a></h3><table><thead><tr><th style=text-align:left>属性</th><th style=text-align:left>选项</th><th>功能</th></tr></thead><tbody><tr><td style=text-align:left><strong>Visualization</strong></td><td style=text-align:left></td><td>选择要显示的约束类型和粒子。</td></tr><tr><td style=text-align:left></td><td style=text-align:left><em>Self-Collision</em></td><td>自碰撞</td></tr><tr><td style=text-align:left></td><td style=text-align:left><em>Inter-Collision</em></td><td>互碰撞</td></tr><tr><td style=text-align:left><strong>Manipulate Backfaces</strong></td><td style=text-align:left></td><td>启用此选项可以可视化和操控可能隐藏在布料当前朝向部分后面的粒子。</td></tr></tbody></table><h3 id=颜色>颜色
-<a class=anchor href=#%e9%a2%9c%e8%89%b2>#</a></h3><table><thead><tr><th>颜色</th><th>描述</th></tr></thead><tbody><tr><td>黑色</td><td>未使用的粒子</td></tr><tr><td>蓝色</td><td>当前选中粒子</td></tr><tr><td>绿色</td><td>已应用碰撞粒子</td></tr></tbody></table><h3 id=应用>应用
-<a class=anchor href=#%e5%ba%94%e7%94%a8>#</a></h3><p>选择<code>Select</code>，使用鼠标框选后勾选<code>Self-Collision and Inter-Collision</code>即可</p><h4 id=self-collison>Self-Collison
-<a class=anchor href=#self-collison>#</a></h4><blockquote><p>在应用自碰撞与互碰撞后<code>检查器</code>会多出此选项</p></blockquote><p>此时<code>场景</code>中粒子，可能会消失，将<code>检查器</code>中<code>Self-Collision Distance</code>调大即可看到</p><table><thead><tr><th style=text-align:left>属性</th><th style=text-align:left>功能</th></tr></thead><tbody><tr><td style=text-align:left><strong>Distance</strong></td><td style=text-align:left>每个粒子的包裹球体的直径。Unity 确保这些球体在模拟过程中不会重叠。<strong>Distance</strong> 属性的值应小于配置中的两个粒子之间的最小距离。如果距离较大，则自碰撞可能违反某些距离约束并导致抖动。</td></tr><tr><td style=text-align:left><strong>Stiffness</strong></td><td style=text-align:left>粒子之间的分离冲力的强度。此值由布料解算器进行计算，应足以保持粒子分离。</td></tr></tbody></table><h3 id=paint与erase>Paint与Erase
-<a class=anchor href=#paint%e4%b8%8eerase>#</a></h3><p>调整好<code>Brush Radius</code>后在<code>场景</code>中滑动以添加或删除用于碰撞的粒子</p><h3 id=互碰撞>互碰撞
-<a class=anchor href=#%e4%ba%92%e7%a2%b0%e6%92%9e>#</a></h3><p>指定粒子与自碰撞相同，不过设置在<code>Edit-Project Setting-Physics</code>中勾选<code>Cloth Inter-Collision</code>，然后设置<code>Distance</code>与<code>Stiffness</code>(功能与自碰撞的相同)</p><h3 id=注意>注意
-<a class=anchor href=#%e6%b3%a8%e6%84%8f>#</a></h3><p>自碰撞和互碰撞可能需要大量的总模拟时间。请考虑缩小碰撞距离并使用自碰撞索引来减少彼此碰撞的粒子数</p><p>自碰撞使用顶点，而不是三角形，因此对于三角形远大于布料厚度的网格，不要指望碰撞能够完美运行</p><h2 id=检查器属性>检查器属性
-<a class=anchor href=#%e6%a3%80%e6%9f%a5%e5%99%a8%e5%b1%9e%e6%80%a7>#</a></h2><table><thead><tr><th style=text-align:left>属性</th><th style=text-align:left>功能</th></tr></thead><tbody><tr><td style=text-align:left><strong>Stretching Stiffness</strong></td><td style=text-align:left>布料的伸展刚性</td></tr><tr><td style=text-align:left><strong>Bending Stiffness</strong></td><td style=text-align:left>布料的弯曲刚性</td></tr><tr><td style=text-align:left><strong>Use Tethers</strong></td><td style=text-align:left>施加约束以帮助防止移动的布料粒子离开固定粒子的距离太远。此属性有助于减少过度拉伸。</td></tr><tr><td style=text-align:left><strong>Use Gravity</strong></td><td style=text-align:left>重力是否影响布料的模拟</td></tr><tr><td style=text-align:left><strong>Damping</strong></td><td style=text-align:left>布料运动时的阻尼</td></tr><tr><td style=text-align:left><strong>External Acceleration</strong></td><td style=text-align:left>施加在布料上的恒定外部加速度。在布料上固定的外部加速度，主要用于模拟风的效果，可设定XYZ方向</td></tr><tr><td style=text-align:left><strong>Random Acceleration</strong></td><td style=text-align:left>施加在布料上的随机外部加速度。在布料上随机的外部加速度，让布料产生不规则的摆动</td></tr><tr><td style=text-align:left><strong>World Velocity Scale</strong></td><td style=text-align:left>角色多大程度的世界空间移动会影响布料顶点。</td></tr><tr><td style=text-align:left><strong>World Acceleration Scale</strong></td><td style=text-align:left>角色多大的世界空间加速度会影响布料顶点。</td></tr><tr><td style=text-align:left><strong>Friction</strong></td><td style=text-align:left>布料与角色碰撞时的摩擦力。设定布料的摩擦系数</td></tr><tr><td style=text-align:left><strong>Collision Mass Scale</strong></td><td style=text-align:left>碰撞粒子的质量增加量。</td></tr><tr><td style=text-align:left><strong>Use Continuous Collision</strong></td><td style=text-align:left>启用连续碰撞来提高碰撞稳定性。</td></tr><tr><td style=text-align:left><strong>Use Virtual Particles</strong></td><td style=text-align:left>每个三角形添加一个虚拟粒子，从而提高碰撞稳定性。</td></tr><tr><td style=text-align:left><strong>Solver Frequency</strong></td><td style=text-align:left>解算器每秒迭代次数。</td></tr><tr><td style=text-align:left><strong>Sleep Threshold</strong></td><td style=text-align:left>布料的睡眠阈值。</td></tr><tr><td style=text-align:left><strong>Capsule Colliders</strong></td><td style=text-align:left>应与此<code>布料</code>实例碰撞的<code>胶囊碰撞体</code>的数组。</td></tr><tr><td style=text-align:left><strong>Sphere Colliders</strong></td><td style=text-align:left>应与此<code>布料</code>实例碰撞的<code>球形碰撞体</code>的数组。</td></tr><tr><td style=text-align:left>virtual Particle Weights</td><td style=text-align:left>虚拟粒子权重</td></tr></tbody></table><blockquote><p>参考数据</p></blockquote><p>Stretching Stiffness：0.8</p><p>Bending Stiffness：0.2</p><p>Damping：0.2</p><p>World Velocity Scale：0（若想移动时晃动，改为0.2）</p><p>World Acceleration Scale：0（若想移动时晃动，改为0.2）</p><p>Friction：0</p><p>Collision Mass Scale：0</p><p>数据来源：
-<a href=https://www.bilibili.com/video/BV1ob411e7Q8>https://www.bilibili.com/video/BV1ob411e7Q8</a></p><h2 id=碰撞>碰撞
-<a class=anchor href=#%e7%a2%b0%e6%92%9e>#</a></h2><p>布料仅可以与<code>胶囊碰撞体</code>或<code>球形碰撞体</code>相互作用，其中两个<code>球形碰撞体</code>可以相连形成锥体碰撞。</p><p>碰撞体记得勾选<code>is trigger(是触发器)</code>，不然游戏里移动或者跳跃会产生一股脚踩脚的感觉而且还会转圈</p><h3 id=胶囊碰撞体>胶囊碰撞体
-<a class=anchor href=#%e8%83%b6%e5%9b%8a%e7%a2%b0%e6%92%9e%e4%bd%93>#</a></h3><p>胶囊碰撞体由两个半球与一个圆柱体连接在一起组成</p><h4 id=添加>添加
-<a class=anchor href=#%e6%b7%bb%e5%8a%a0>#</a></h4><p>在相应骨骼创建空物体，在<code>检查器</code>窗口中单击<code>Add Component</code>按钮，然后选择 <code>Physics</code>-<code>Capsule Collider</code></p><h4 id=属性>属性
-<a class=anchor href=#%e5%b1%9e%e6%80%a7>#</a></h4><table><thead><tr><th style=text-align:left>属性</th><th style=text-align:left>功能</th></tr></thead><tbody><tr><td style=text-align:left><strong>Edit Collider</strong></td><td style=text-align:left>选中即可在<code>场景</code>中可视化编辑大小</td></tr><tr><td style=text-align:left><strong>Is Trigger</strong></td><td style=text-align:left>如果启用此属性，则该碰撞体将用于触发事件，并被物理引擎忽略</td></tr><tr><td style=text-align:left><strong>Material</strong></td><td style=text-align:left>引用物理材质，可确定该碰撞体与其他对象的交互方式</td></tr><tr><td style=text-align:left><strong>Center</strong></td><td style=text-align:left>碰撞体在对象局部空间中的位置</td></tr><tr><td style=text-align:left><strong>Radius</strong></td><td style=text-align:left>碰撞体的局部宽度的半径</td></tr><tr><td style=text-align:left><strong>Height</strong></td><td style=text-align:left>碰撞体的总高度</td></tr><tr><td style=text-align:left><strong>Direction</strong></td><td style=text-align:left>胶囊体在对象局部空间中纵向方向的轴。</td></tr></tbody></table><h4 id=结构>结构
-<a class=anchor href=#%e7%bb%93%e6%9e%84>#</a></h4><p><img src=https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/08-Cloth/CapsuleColliderDiagram.3al0s4nf8mc0.webp alt=img></p><h4 id=添加到布料>添加到布料
-<a class=anchor href=#%e6%b7%bb%e5%8a%a0%e5%88%b0%e5%b8%83%e6%96%99>#</a></h4><p>直接将碰撞所在物体拖到<code>Cloth(布料)</code>的<code>Capsule Colliders(胶囊碰撞器)</code>处即可</p><h3 id=球形碰撞体与锥体>球形碰撞体与锥体
-<a class=anchor href=#%e7%90%83%e5%bd%a2%e7%a2%b0%e6%92%9e%e4%bd%93%e4%b8%8e%e9%94%a5%e4%bd%93>#</a></h3><p>球形碰撞体是一种基本的球体形状原始碰撞体</p><h4 id=添加-1>添加
-<a class=anchor href=#%e6%b7%bb%e5%8a%a0-1>#</a></h4><p>在相应骨骼创建空物体，在<code>检查器</code>窗口中单击<code>Add Component</code>按钮，然后选择 <code>Physics</code>-<code>Sphere Collider</code></p><h4 id=属性-1>属性
-<a class=anchor href=#%e5%b1%9e%e6%80%a7-1>#</a></h4><table><thead><tr><th style=text-align:left>属性</th><th style=text-align:left>功能</th></tr></thead><tbody><tr><td style=text-align:left><strong>Edit Collider</strong></td><td style=text-align:left>选中即可在<code>场景</code>中可视化编辑大小</td></tr><tr><td style=text-align:left><strong>Is Trigger</strong></td><td style=text-align:left>如果启用此属性，则该碰撞体将用于触发事件，并被物理引擎忽略</td></tr><tr><td style=text-align:left><strong>Material</strong></td><td style=text-align:left>引用物理材质，可确定该碰撞体与其他对象的交互方式</td></tr><tr><td style=text-align:left><strong>Center</strong></td><td style=text-align:left>碰撞体在对象局部空间中的位置</td></tr><tr><td style=text-align:left><strong>Radius</strong></td><td style=text-align:left>碰撞体半径的大小</td></tr></tbody></table><h4 id=添加到布料-1>添加到布料
-<a class=anchor href=#%e6%b7%bb%e5%8a%a0%e5%88%b0%e5%b8%83%e6%96%99-1>#</a></h4><p>在<code>Cloth(布料)</code>的<code>Sphere Colliders(球体碰撞器)</code>将<code>Size</code>调整为非零值，每个元素可以放两个球体碰撞</p><p>如果只放入一个，则为球体碰撞</p><p>如果放入两个，那么两个球体碰撞将自动相连为锥体碰撞</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#网格与骨骼权重处理>网格与骨骼权重处理</a><ul><li><a href=#如何缝合网格>如何缝合网格？</a></li></ul></li><li><a href=#添加布料>添加布料</a></li><li><a href=#edit-cloth-constraints编辑约束>Edit cloth constraints(编辑约束)</a><ul><li><a href=#cloth-constraints>Cloth Constraints</a></li><li><a href=#约束类型与颜色>约束类型与颜色</a></li><li><a href=#约束版本模式>约束版本模式</a></li></ul></li><li><a href=#edit-cloth-selfinter-collision编辑自碰撞与互碰撞>Edit cloth self/inter-collision(编辑自碰撞与互碰撞)</a><ul><li><a href=#cloth-self-collision-and-inter-collision>Cloth Self-Collision and Inter-Collision</a></li><li><a href=#颜色>颜色</a></li><li><a href=#应用>应用</a></li><li><a href=#paint与erase>Paint与Erase</a></li><li><a href=#互碰撞>互碰撞</a></li><li><a href=#注意>注意</a></li></ul></li><li><a href=#检查器属性>检查器属性</a></li><li><a href=#碰撞>碰撞</a><ul><li><a href=#胶囊碰撞体>胶囊碰撞体</a></li><li><a href=#球形碰撞体与锥体>球形碰撞体与锥体</a></li></ul></li></ul></li></ul></nav></div></aside></main></body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">属性</th><th align="left">选项</th><th>功能</th></tr></thead><tbody><tr><td align="left"><strong>Visualization</strong></td><td align="left"></td><td>选择要显示的约束类型和粒子。</td></tr><tr><td align="left"></td><td align="left"><em>Max Distance</em></td><td>仅显示布料粒子的 Max Distance 值。</td></tr><tr><td align="left"></td><td align="left"><em>Surface Penetration</em></td><td>仅显示布料粒子的 Surface Penetration 值。</td></tr><tr><td align="left"></td><td align="left"><em>Manipulate Backfaces</em></td><td>启用此选项可以可视化和操控可能隐藏在布料当前朝向部分后面的粒子。</td></tr><tr><td align="left">[ 色谱 ]</td><td align="left"></td><td>根据当前在整块布料中应用的最小值和最大值，为上述选定的约束类型提供粒子颜色和约束值之间的对应关系。黑色始终表示粒子没有约束。</td></tr><tr><td align="left"><strong>Constraint Size</strong></td><td align="left"></td><td>代表布料粒子的球体的显示大小。在方便时可以调整此值以便简化约束版本。这个属性对约束本身没有任何影响。</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="约束类型与颜色">约束类型与颜色</h3><a class="sl-anchor-link" href="#约束类型与颜色"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “约束类型与颜色”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>约束类型</th><th>描述</th></tr></thead><tbody><tr><td>Max Distance</td><td>布料可以从顶点位置行进的最大距离</td></tr><tr><td>Surface Penetration</td><td>布料粒子可穿透网格的深度</td></tr></tbody></table>
+<p>根据在<code dir="auto">Visualization</code>所选类型，粒子的颜色表示该粒子的约束在布料内的相对值</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="约束版本模式">约束版本模式</h3><a class="sl-anchor-link" href="#约束版本模式"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “约束版本模式”</span></a></div>
+<p>一共可以使用三种不同模式来编辑布料的约束值</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="1select">1）Select</h4><a class="sl-anchor-link" href="#1select"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “1）Select”</span></a></div>
+<blockquote>
+<p>将固定约束值应用于已选择的粒子组</p>
+</blockquote>
+<p>使用鼠标框选后，启用要应用于选定项的约束类型然后设定一个值即可</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="2paint">2）Paint</h4><a class="sl-anchor-link" href="#2paint"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “2）Paint”</span></a></div>
+<blockquote>
+<p>通过用画笔绘制布料粒子来施加固定的约束值</p>
+</blockquote>
+<p>根据需要调整<code dir="auto">Brush Radius</code>，启用要应用的约束类型并设置一个绘制值后用画笔在粒子上绘制约束</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="3gradient">3）Gradient</h4><a class="sl-anchor-link" href="#3gradient"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “3）Gradient”</span></a></div>
+<blockquote>
+<p>将约束值从左到右线性渐变应用于预先选择的粒子组</p>
+</blockquote>
+<p><strong>需先确保在<code dir="auto">场景</code>视图中开启<code dir="auto">2D</code>视图</strong></p>
+<p>使用鼠标框选后，设置范围，然后选择要应用的约束类型</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="edit-cloth-selfinter-collision编辑自碰撞与互碰撞">Edit cloth self/inter-collision(编辑自碰撞与互碰撞)</h2><a class="sl-anchor-link" href="#edit-cloth-selfinter-collision编辑自碰撞与互碰撞"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Edit cloth self/inter-collision(编辑自碰撞与互碰撞)”</span></a></div>
+<ul>
+<li>自碰撞：防止布料穿透自身</li>
+<li>互碰撞：允许布料粒子相互碰撞</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="cloth-self-collision-and-inter-collision">Cloth Self-Collision and Inter-Collision</h3><a class="sl-anchor-link" href="#cloth-self-collision-and-inter-collision"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Cloth Self-Collision and Inter-Collision”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">属性</th><th align="left">选项</th><th>功能</th></tr></thead><tbody><tr><td align="left"><strong>Visualization</strong></td><td align="left"></td><td>选择要显示的约束类型和粒子。</td></tr><tr><td align="left"></td><td align="left"><em>Self-Collision</em></td><td>自碰撞</td></tr><tr><td align="left"></td><td align="left"><em>Inter-Collision</em></td><td>互碰撞</td></tr><tr><td align="left"><strong>Manipulate Backfaces</strong></td><td align="left"></td><td>启用此选项可以可视化和操控可能隐藏在布料当前朝向部分后面的粒子。</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="颜色">颜色</h3><a class="sl-anchor-link" href="#颜色"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “颜色”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>颜色</th><th>描述</th></tr></thead><tbody><tr><td>黑色</td><td>未使用的粒子</td></tr><tr><td>蓝色</td><td>当前选中粒子</td></tr><tr><td>绿色</td><td>已应用碰撞粒子</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="应用">应用</h3><a class="sl-anchor-link" href="#应用"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “应用”</span></a></div>
+<p>选择<code dir="auto">Select</code>，使用鼠标框选后勾选<code dir="auto">Self-Collision and Inter-Collision</code>即可</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="self-collison">Self-Collison</h4><a class="sl-anchor-link" href="#self-collison"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Self-Collison”</span></a></div>
+<blockquote>
+<p>在应用自碰撞与互碰撞后<code dir="auto">检查器</code>会多出此选项</p>
+</blockquote>
+<p>此时<code dir="auto">场景</code>中粒子，可能会消失，将<code dir="auto">检查器</code>中<code dir="auto">Self-Collision Distance</code>调大即可看到</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">属性</th><th align="left">功能</th></tr></thead><tbody><tr><td align="left"><strong>Distance</strong></td><td align="left">每个粒子的包裹球体的直径。Unity 确保这些球体在模拟过程中不会重叠。<strong>Distance</strong> 属性的值应小于配置中的两个粒子之间的最小距离。如果距离较大，则自碰撞可能违反某些距离约束并导致抖动。</td></tr><tr><td align="left"><strong>Stiffness</strong></td><td align="left">粒子之间的分离冲力的强度。此值由布料解算器进行计算，应足以保持粒子分离。</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="paint-与-erase">Paint 与 Erase</h3><a class="sl-anchor-link" href="#paint-与-erase"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Paint 与 Erase”</span></a></div>
+<p>调整好<code dir="auto">Brush Radius</code>后在<code dir="auto">场景</code>中滑动以添加或删除用于碰撞的粒子</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="互碰撞">互碰撞</h3><a class="sl-anchor-link" href="#互碰撞"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “互碰撞”</span></a></div>
+<p>指定粒子与自碰撞相同，不过设置在<code dir="auto">Edit-Project Setting-Physics</code>中勾选<code dir="auto">Cloth Inter-Collision</code>，然后设置<code dir="auto">Distance</code>与<code dir="auto">Stiffness</code>(功能与自碰撞的相同)</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="注意">注意</h3><a class="sl-anchor-link" href="#注意"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “注意”</span></a></div>
+<p>自碰撞和互碰撞可能需要大量的总模拟时间。请考虑缩小碰撞距离并使用自碰撞索引来减少彼此碰撞的粒子数</p>
+<p>自碰撞使用顶点，而不是三角形，因此对于三角形远大于布料厚度的网格，不要指望碰撞能够完美运行</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="检查器属性">检查器属性</h2><a class="sl-anchor-link" href="#检查器属性"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “检查器属性”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">属性</th><th align="left">功能</th></tr></thead><tbody><tr><td align="left"><strong>Stretching Stiffness</strong></td><td align="left">布料的伸展刚性</td></tr><tr><td align="left"><strong>Bending Stiffness</strong></td><td align="left">布料的弯曲刚性</td></tr><tr><td align="left"><strong>Use Tethers</strong></td><td align="left">施加约束以帮助防止移动的布料粒子离开固定粒子的距离太远。此属性有助于减少过度拉伸。</td></tr><tr><td align="left"><strong>Use Gravity</strong></td><td align="left">重力是否影响布料的模拟</td></tr><tr><td align="left"><strong>Damping</strong></td><td align="left">布料运动时的阻尼</td></tr><tr><td align="left"><strong>External Acceleration</strong></td><td align="left">施加在布料上的恒定外部加速度。在布料上固定的外部加速度，主要用于模拟风的效果，可设定 XYZ 方向</td></tr><tr><td align="left"><strong>Random Acceleration</strong></td><td align="left">施加在布料上的随机外部加速度。在布料上随机的外部加速度，让布料产生不规则的摆动</td></tr><tr><td align="left"><strong>World Velocity Scale</strong></td><td align="left">角色多大程度的世界空间移动会影响布料顶点。</td></tr><tr><td align="left"><strong>World Acceleration Scale</strong></td><td align="left">角色多大的世界空间加速度会影响布料顶点。</td></tr><tr><td align="left"><strong>Friction</strong></td><td align="left">布料与角色碰撞时的摩擦力。设定布料的摩擦系数</td></tr><tr><td align="left"><strong>Collision Mass Scale</strong></td><td align="left">碰撞粒子的质量增加量。</td></tr><tr><td align="left"><strong>Use Continuous Collision</strong></td><td align="left">启用连续碰撞来提高碰撞稳定性。</td></tr><tr><td align="left"><strong>Use Virtual Particles</strong></td><td align="left">每个三角形添加一个虚拟粒子，从而提高碰撞稳定性。</td></tr><tr><td align="left"><strong>Solver Frequency</strong></td><td align="left">解算器每秒迭代次数。</td></tr><tr><td align="left"><strong>Sleep Threshold</strong></td><td align="left">布料的睡眠阈值。</td></tr><tr><td align="left"><strong>Capsule Colliders</strong></td><td align="left">应与此<code dir="auto">布料</code>实例碰撞的<code dir="auto">胶囊碰撞体</code>的数组。</td></tr><tr><td align="left"><strong>Sphere Colliders</strong></td><td align="left">应与此<code dir="auto">布料</code>实例碰撞的<code dir="auto">球形碰撞体</code>的数组。</td></tr><tr><td align="left">virtual Particle Weights</td><td align="left">虚拟粒子权重</td></tr></tbody></table>
+<blockquote>
+<p>参考数据</p>
+</blockquote>
+<p>Stretching Stiffness：0.8</p>
+<p>Bending Stiffness：0.2</p>
+<p>Damping：0.2</p>
+<p>World Velocity Scale：0（若想移动时晃动，改为 0.2）</p>
+<p>World Acceleration Scale：0（若想移动时晃动，改为 0.2）</p>
+<p>Friction：0</p>
+<p>Collision Mass Scale：0</p>
+<p>数据来源：<a href="https://www.bilibili.com/video/BV1ob411e7Q8">https://www.bilibili.com/video/BV1ob411e7Q8</a></p>
+<div class="sl-heading-wrapper level-h2"><h2 id="碰撞">碰撞</h2><a class="sl-anchor-link" href="#碰撞"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “碰撞”</span></a></div>
+<p>布料仅可以与<code dir="auto">胶囊碰撞体</code>或<code dir="auto">球形碰撞体</code>相互作用，其中两个<code dir="auto">球形碰撞体</code>可以相连形成锥体碰撞。</p>
+<p>碰撞体记得勾选<code dir="auto">is trigger(是触发器)</code>，不然游戏里移动或者跳跃会产生一股脚踩脚的感觉而且还会转圈</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="胶囊碰撞体">胶囊碰撞体</h3><a class="sl-anchor-link" href="#胶囊碰撞体"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “胶囊碰撞体”</span></a></div>
+<p>胶囊碰撞体由两个半球与一个圆柱体连接在一起组成</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="添加">添加</h4><a class="sl-anchor-link" href="#添加"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “添加”</span></a></div>
+<p>在相应骨骼创建空物体，在<code dir="auto">检查器</code>窗口中单击<code dir="auto">Add Component</code>按钮，然后选择 <code dir="auto">Physics</code>-<code dir="auto">Capsule Collider</code></p>
+<div class="sl-heading-wrapper level-h4"><h4 id="属性">属性</h4><a class="sl-anchor-link" href="#属性"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “属性”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">属性</th><th align="left">功能</th></tr></thead><tbody><tr><td align="left"><strong>Edit Collider</strong></td><td align="left">选中即可在<code dir="auto">场景</code>中可视化编辑大小</td></tr><tr><td align="left"><strong>Is Trigger</strong></td><td align="left">如果启用此属性，则该碰撞体将用于触发事件，并被物理引擎忽略</td></tr><tr><td align="left"><strong>Material</strong></td><td align="left">引用物理材质，可确定该碰撞体与其他对象的交互方式</td></tr><tr><td align="left"><strong>Center</strong></td><td align="left">碰撞体在对象局部空间中的位置</td></tr><tr><td align="left"><strong>Radius</strong></td><td align="left">碰撞体的局部宽度的半径</td></tr><tr><td align="left"><strong>Height</strong></td><td align="left">碰撞体的总高度</td></tr><tr><td align="left"><strong>Direction</strong></td><td align="left">胶囊体在对象局部空间中纵向方向的轴。</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h4"><h4 id="结构">结构</h4><a class="sl-anchor-link" href="#结构"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “结构”</span></a></div>
+<p><img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/08-Cloth/CapsuleColliderDiagram.3al0s4nf8mc0.webp" alt="img"></p>
+<div class="sl-heading-wrapper level-h4"><h4 id="添加到布料">添加到布料</h4><a class="sl-anchor-link" href="#添加到布料"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “添加到布料”</span></a></div>
+<p>直接将碰撞所在物体拖到<code dir="auto">Cloth(布料)</code>的<code dir="auto">Capsule Colliders(胶囊碰撞器)</code>处即可</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="球形碰撞体与锥体">球形碰撞体与锥体</h3><a class="sl-anchor-link" href="#球形碰撞体与锥体"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “球形碰撞体与锥体”</span></a></div>
+<p>球形碰撞体是一种基本的球体形状原始碰撞体</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="添加-1">添加</h4><a class="sl-anchor-link" href="#添加-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “添加”</span></a></div>
+<p>在相应骨骼创建空物体，在<code dir="auto">检查器</code>窗口中单击<code dir="auto">Add Component</code>按钮，然后选择 <code dir="auto">Physics</code>-<code dir="auto">Sphere Collider</code></p>
+<div class="sl-heading-wrapper level-h4"><h4 id="属性-1">属性</h4><a class="sl-anchor-link" href="#属性-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “属性”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">属性</th><th align="left">功能</th></tr></thead><tbody><tr><td align="left"><strong>Edit Collider</strong></td><td align="left">选中即可在<code dir="auto">场景</code>中可视化编辑大小</td></tr><tr><td align="left"><strong>Is Trigger</strong></td><td align="left">如果启用此属性，则该碰撞体将用于触发事件，并被物理引擎忽略</td></tr><tr><td align="left"><strong>Material</strong></td><td align="left">引用物理材质，可确定该碰撞体与其他对象的交互方式</td></tr><tr><td align="left"><strong>Center</strong></td><td align="left">碰撞体在对象局部空间中的位置</td></tr><tr><td align="left"><strong>Radius</strong></td><td align="left">碰撞体半径的大小</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h4"><h4 id="添加到布料-1">添加到布料</h4><a class="sl-anchor-link" href="#添加到布料-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “添加到布料”</span></a></div>
+<p>在<code dir="auto">Cloth(布料)</code>的<code dir="auto">Sphere Colliders(球体碰撞器)</code>将<code dir="auto">Size</code>调整为非零值，每个元素可以放两个球体碰撞</p>
+<p>如果只放入一个，则为球体碰撞</p>
+<p>如果放入两个，那么两个球体碰撞将自动相连为锥体碰撞</p> </div> <footer class="sl-flex astro-3yyafb3n"> <div class="meta sl-flex astro-3yyafb3n">   </div> <div class="pagination-links print:hidden astro-u2l5gyhi" dir="ltr"> <a href="/div/state_behaviors/" rel="prev" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg> <span class="astro-u2l5gyhi"> Previous <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">State Behaviors</span> </span> </a> <a href="/div/particle_system/" rel="next" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> <span class="astro-u2l5gyhi"> Next <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">Particle System</span> </span> </a> </div>   </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>
