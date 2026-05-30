@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ja" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-bguv2lll"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Animator Layers | yexca'Docs for VRChat</title><script src="/language-redirect.js" defer></script><link rel="shortcut icon" href="/favicon.png" type="image/png"/><meta name="generator" content="Astro v5.16.8"/><meta name="generator" content="Starlight v0.37.2"/><meta property="og:title" content="Animator Layers"/><meta property="og:type" content="article"/><meta property="og:locale" content="ja"/><meta property="og:site_name" content="yexca'Docs for VRChat"/><meta name="twitter:card" content="summary_large_image"/><script>
+<!DOCTYPE html><html lang="ja" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-bguv2lll"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>アニメーターレイヤー | yexca'Docs for VRChat</title><script src="/language-redirect.js" defer></script><link rel="shortcut icon" href="/favicon.png" type="image/png"/><meta name="generator" content="Astro v5.16.8"/><meta name="generator" content="Starlight v0.37.2"/><meta property="og:title" content="アニメーターレイヤー"/><meta property="og:type" content="article"/><meta property="og:locale" content="ja"/><meta property="og:site_name" content="yexca'Docs for VRChat"/><meta name="twitter:card" content="summary_large_image"/><script>
 	window.StarlightThemeProvider = (() => {
 		const storedTheme =
 			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
@@ -77,328 +77,329 @@
 		})();
 	</script> </sl-sidebar-state-persist>  <div class="md:sl-hidden"> <div class="mobile-preferences sl-flex astro-wu23bvmt"> <div class="social-icons astro-wu23bvmt"> <a href="https://github.com/yexca-VRChat/vrchat-docs-source" rel="me" class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">テーマの選択</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">ダーク</option><option value="light" class="astro-4yphtoen">ライト</option><option value="auto" selected class="astro-4yphtoen">自動</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label>  </starlight-theme-select>  <script>
 	StarlightThemeProvider.updatePickers();
-</script>  <starlight-lang-select><label style="--sl-select-width: 7em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">言語の選択</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path fill-rule="evenodd" d="M8.516 3a.94.94 0 0 0-.941.94v1.15H2.94a.94.94 0 1 0 0 1.882h7.362a7.422 7.422 0 0 1-1.787 3.958 7.42 7.42 0 0 1-1.422-2.425.94.94 0 1 0-1.774.627 9.303 9.303 0 0 0 1.785 3.043 7.422 7.422 0 0 1-4.164 1.278.94.94 0 1 0 0 1.881 9.303 9.303 0 0 0 5.575-1.855 9.303 9.303 0 0 0 4.11 1.74l-.763 1.525a.968.968 0 0 0-.016.034l-1.385 2.77a.94.94 0 1 0 1.683.841l1.133-2.267h5.806l1.134 2.267a.94.94 0 0 0 1.683-.841l-1.385-2.769a.95.95 0 0 0-.018-.036l-3.476-6.951a.94.94 0 0 0-1.682 0l-1.82 3.639a7.423 7.423 0 0 1-3.593-1.256 9.303 9.303 0 0 0 2.27-5.203h1.894a.94.94 0 0 0 0-1.881H9.456V3.94A.94.94 0 0 0 8.516 3Zm6.426 11.794a1.068 1.068 0 0 1-.02.039l-.703 1.407h3.924l-1.962-3.924-1.24 2.478Z" clip-rule="evenodd"/></svg> <select autocomplete="off" class="astro-4yphtoen"> <option value="/summary/layers/" class="astro-4yphtoen">简体中文</option><option value="/zh-tw/summary/layers/" class="astro-4yphtoen">正體中文</option><option value="/en/summary/layers/" class="astro-4yphtoen">English</option><option value="/ja/summary/layers/" selected class="astro-4yphtoen">日本語</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label> </starlight-lang-select> </div>  </div> </div> </div> </nav> <div class="main-frame astro-vrdttmbt">  <script type="module">const a=document.getElementById("starlight__sidebar"),n=a?.querySelector("sl-sidebar-state-persist"),o="sl-sidebar-state",i=()=>{let t=[];const e=n?.dataset.hash||"";try{const s=sessionStorage.getItem(o),r=JSON.parse(s||"{}");Array.isArray(r.open)&&r.hash===e&&(t=r.open)}catch{}return{hash:e,open:t,scroll:a?.scrollTop||0}},c=t=>{try{sessionStorage.setItem(o,JSON.stringify(t))}catch{}},d=()=>c(i()),l=(t,e)=>{const s=i();s.open[e]=t,c(s)};n?.addEventListener("click",t=>{if(!(t.target instanceof Element))return;const e=t.target.closest("summary")?.closest("details");if(!e)return;const s=e.querySelector("sl-sidebar-restore"),r=parseInt(s?.dataset.index||"");isNaN(r)||l(!e.open,r)});addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"&&d()});addEventListener("pageHide",d);</script> <div class="lg:sl-flex astro-67yu43on"> <aside class="right-sidebar-container print:hidden astro-67yu43on"> <div class="right-sidebar astro-67yu43on"> <div class="lg:sl-hidden astro-pb3aqygn"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-doynk5tl"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-doynk5tl"><details id="starlight__mobile-toc" class="astro-doynk5tl"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-doynk5tl"><span class="toggle sl-flex astro-doynk5tl">目次<svg aria-hidden="true" class="caret astro-doynk5tl astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-doynk5tl"></span></summary><div class="dropdown astro-doynk5tl"><ul class="isMobile astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">概要</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#图层" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">图层</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#状态" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">状态</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#添加状态" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">添加状态</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#颜色" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">颜色</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#状态设置" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">状态设置</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#transition" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Transition</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#过渡" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">过渡</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#settings" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Settings</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#condition" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Condition</span> </a>  </li> </ul>  </li> </ul> </div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C181hMzK.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-pb3aqygn"><div class="sl-container astro-pb3aqygn"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">目次</h2><ul class="astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">概要</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#图层" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">图层</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#状态" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">状态</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#添加状态" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">添加状态</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#颜色" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">颜色</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#状态设置" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">状态设置</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#transition" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Transition</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#过渡" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">过渡</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#settings" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Settings</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#condition" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Condition</span> </a>  </li> </ul>  </li> </ul> </nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.CKWWgpjV.js"></script></div></div> </div> </aside> <div class="main-pane astro-67yu43on">  <main data-pagefind-body class="astro-bguv2lll" lang="zh-CN" dir="ltr">    <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <h1 id="_top" class="astro-j6tvhyss">Animator Layers</h1>  <p class="sl-flex astro-opzsrvew"> <svg aria-hidden="true" class="astro-opzsrvew astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-color: var(--sl-color-orange-high);--sl-icon-size: 1.5em;"><path d="M12 16a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm10.67 1.47-8.05-14a3 3 0 0 0-5.24 0l-8 14A3 3 0 0 0 3.94 22h16.12a3 3 0 0 0 2.61-4.53Zm-1.73 2a1 1 0 0 1-.88.51H3.94a1 1 0 0 1-.88-.51 1 1 0 0 1 0-1l8-14a1 1 0 0 1 1.78 0l8.05 14a1 1 0 0 1 .05 1.02v-.02ZM12 8a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1Z"/></svg> <span class="astro-opzsrvew">このコンテンツはまだ日本語訳がありません。</span> </p> </div> </div>  <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <div class="sl-markdown-content"> <blockquote>
-<p>Unity 图层的机制，模型是如何被修改的呢？</p>
-</blockquote>
-<p>不同图层的状态可以同时发生，同一图层同时只能执行一个状态</p>
-<div class="sl-heading-wrapper level-h2"><h2 id="图层">图层</h2><a class="sl-anchor-link" href="#图层"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “图层”</span></a></div>
-<p>点击 <code dir="auto">+</code> 可以添加一个图层，点击图层旁边的齿轮图标，会弹出一个小窗口，可以设置该图层对应的参数</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td>Weight(权重)</td><td>这一层的权重，0 代表该层权重是 0（该层不生效），1 代表该层权重为 1（该层中的动画能完全表现）</td></tr><tr><td>Mask(遮罩)</td><td>此层上使用的遮罩，可以限制动画的播放部位，例如只要播放上半身的动画，可以使用一个遮罩定义在上半身播放动画。设置后该图层上面会显示一个<code dir="auto">M</code>的小图标</td></tr><tr><td>Blending</td><td>和其他层混合的模式</td></tr><tr><td><em>Override</em></td><td>覆盖上面的层中对应 Mask 的部位</td></tr><tr><td><em>Additive</em></td><td>会加在之前图层的动画之上</td></tr><tr><td>Sync</td><td>复用其他层中的状态机</td></tr><tr><td>IK Pass</td><td>反向动力学</td></tr></tbody></table>
-<div class="sl-heading-wrapper level-h2"><h2 id="状态">状态</h2><a class="sl-anchor-link" href="#状态"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “状态”</span></a></div>
-<p>状态是指在图层中的<code dir="auto">小方框</code>，当拖入动画时会自动变成的“东西”</p>
-<p>新建一个图层，可以看到三个状态</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th align="left">状态名称</th><th align="left">简述</th></tr></thead><tbody><tr><td align="left">Entry</td><td align="left">入口，根据过渡进入默认状态</td></tr><tr><td align="left">Any State</td><td align="left">任意状态，只要条件满足，可任意跳转到过渡的状态</td></tr><tr><td align="left">Exit</td><td align="left">退出，返回到”Entry“</td></tr></tbody></table>
-<div class="sl-heading-wrapper level-h3"><h3 id="添加状态">添加状态</h3><a class="sl-anchor-link" href="#添加状态"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “添加状态”</span></a></div>
-<p>可以在空白处右键添加<code dir="auto">Empty</code>(空状态)，也可以将动画文件拖到<code dir="auto">Animator</code>窗口中添加一个状态</p>
-<p>如果当前在<code dir="auto">Project</code>窗口选中了一个动画文件，可以通过右击右击的<code dir="auto">From Selected Clip</code>创建一个状态，不过还是直接拖入更方便</p>
-<p><em>第一个创建的状态默认是橙色的，代表默认状态，<code dir="auto">Animator</code>会在一开始就播放，如果状态中有动画，也会被播放</em></p>
-<div class="sl-heading-wrapper level-h3"><h3 id="颜色">颜色</h3><a class="sl-anchor-link" href="#颜色"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “颜色”</span></a></div>
-<p>橙色：默认状态，即进入就执行的动画</p>
-<p>灰色：可通过过渡达到条件执行的动画</p>
-<div class="sl-heading-wrapper level-h3"><h3 id="状态设置">状态设置</h3><a class="sl-anchor-link" href="#状态设置"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “状态设置”</span></a></div>
-<p>每个状态都可以包含一个动画，处于该状态时，<code dir="auto">Animator</code>组件所在的物体会播放动画，选中一个状态时，会有如下选项</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>名称</th><th>描述</th></tr></thead><tbody><tr><td>Motion</td><td>状态绑定的动画（Animation）</td></tr><tr><td>速度(Speed)</td><td>动画播放的速度</td></tr><tr><td>乘数(Multiplier)</td><td>Speed * 指定参数（float）作为运行时的播放速度</td></tr><tr><td>Motion Time</td><td>单位化时间，指定参数（float，范围是 0~1）作为动画播放时间(可使用此制作轮盘开关)</td></tr><tr><td>镜像(Mirror)</td><td>镜像播放，若打开”参数(Parameter)“：指定参数作（bool）为镜像的开关</td></tr><tr><td>周期偏移(Cycle Offset)</td><td>循环偏移量，可以用来同步循环的动画，使用单位化时间（范围是 0~1），也可使用参数控制</td></tr><tr><td>Foot IK</td><td>只用于人形动画，角色的脚是否使用 IK（反向动力学）</td></tr><tr><td>Write Default</td><td>进入下一个状态时重置此状态所作的更改（初始化该状态没有用到的参数为默认值）</td></tr></tbody></table>
-<div class="sl-heading-wrapper level-h3"><h3 id="transition">Transition</h3><a class="sl-anchor-link" href="#transition"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Transition”</span></a></div>
-<p>显示当前状态的过渡，选中后出现内容与在图层中选中一致</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>名称</th><th>描述</th></tr></thead><tbody><tr><td>Solo</td><td>选中则只生效当前过渡，其他将被禁用</td></tr><tr><td>Mute</td><td>选中则禁用当前过渡</td></tr></tbody></table>
-<p><em>如果同时选中<code dir="auto">Solo</code>和<code dir="auto">Mute</code>，<code dir="auto">Mute</code>会优先生效</em></p>
-<div class="sl-heading-wrapper level-h2"><h2 id="过渡">过渡</h2><a class="sl-anchor-link" href="#过渡"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “过渡”</span></a></div>
-<p>表示状态之间的切换条件，一般会有一个或多个条件，用于从一个状态切换到另一个状态</p>
-<p>右击一个状态，<code dir="auto">Make Transition</code>后选择另一个状态即可创建过渡，在过渡中可以添加相应条件</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>名称</th><th>描述</th></tr></thead><tbody><tr><td>Solo</td><td>选中则只生效当前过渡，其他将被禁用</td></tr><tr><td>Mute</td><td>选中则禁用当前过渡</td></tr></tbody></table>
-<p><em>如果同时选中<code dir="auto">Solo</code>和<code dir="auto">Mute</code>，<code dir="auto">Mute</code>会优先生效</em></p>
-<p>多个出过渡时可调整位置(上下)以实现优先级(上方优先级高于下方)</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>名称</th><th>描述</th></tr></thead><tbody><tr><td>Name Field</td><td>名称框可以为过渡命名，用于区分俩个状态之间的多条过渡时很有用</td></tr><tr><td>Has Exit Time</td><td>是否有退出时间为条件</td></tr></tbody></table>
-<p>退出时间是一种特殊的过渡条件，它没有依赖参数，而是根据设置的退出时间点作为条件进行状态转换。</p>
-<div class="sl-heading-wrapper level-h3"><h3 id="settings">Settings</h3><a class="sl-anchor-link" href="#settings"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Settings”</span></a></div>
-<p>过渡的一些参数设置</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>名称</th><th>描述</th></tr></thead><tbody><tr><td>退出时间(Exit Time)</td><td>如果勾选了<code dir="auto">Has Exit Time</code>，该参数可以设置，设置动画退出的单位化时间(单位：上一状态动画长度，如为物体打开动画/空动画可当成以秒为单位)。<br>例如设置为 0.75，代表动画播放到 75%时为<code dir="auto">true</code>，如果没有其他条件，会直接切换到下一个状态。<br>如果 exit time 小于 1，那么状态每次循环到对应位置的时候（不管动画是否设置为循环，状态总是循环的），该条件都会为 true。比如第一次播放到 75%，第二次播放到 75%……时退出时间条件都会为 true。<br>如果 exit time 大于 1，该条件只会检测一次。比如 exit time 为 3.5，state 的动画会在循环 3 次后，在播放到第 4 次的 50%时为 true。</td></tr><tr><td>固定持续时间(Fixed Duration)</td><td>勾选，下一项”过渡持续时间(Transition Duration)“以秒为单位<br>取消勾选，下一项”过渡持续时间(Transition Duration)“以（前一个状态的）百分数计数，1 为 100%</td></tr><tr><td>过渡持续时间(Transition Duration)</td><td>过渡的过渡时间。两个状态在转换时，一般不会瞬间从一个状态转换到另一个状态，而是会经过平滑混合，这个属性就是设置了平滑混合的时间</td></tr><tr><td>过度偏移(Transition Offset)</td><td>状态开始播放时的时间偏移。即后一个状态从何处开始，值为后一个状态的百分数，1 为 100%<br>例如设置为 0.5，则转换到下一个状态时，会从 50%的位置开始播放</td></tr></tbody></table>
-<div class="sl-heading-wrapper level-h4"><h4 id="过渡图">过渡图</h4><a class="sl-anchor-link" href="#过渡图"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “过渡图”</span></a></div>
-<p>上面的参数不仅可以手动修改，也可以通过过渡图预览和修改</p>
-<p><img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/07-Layers/image.d1zgl4fkjnc.webp" alt="img"></p>
-<div class="sl-heading-wrapper level-h4"><h4 id="中断源interruption-source">中断源(Interruption Source)</h4><a class="sl-anchor-link" href="#中断源interruption-source"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “中断源(Interruption Source)”</span></a></div>
-<p>可以打断状态的过渡，但尽量避免使用，比较复杂</p>
-<p>例如以下图层</p>
-<p><img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/07-Layers/image.3j6e8ox86fg0.webp" alt="img"></p>
-<div class="sl-heading-wrapper level-h5"><h5 id="current-state当前状态">Current State(当前状态)</h5><a class="sl-anchor-link" href="#current-state当前状态"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Current State(当前状态)”</span></a></div>
-<p>默认情况下，当 A 到 C 的切换触发后，状态机开始切换到 C，在切换到 C 之前无法被改变。但是，如果将 A->C 的过渡的<code dir="auto">中断源(Interruption Source)</code>改为<code dir="auto">Current State</code>，A->C 的过渡就可以被 A 上的<strong>一些</strong>过渡中断</p>
-<p>在状态 A 上的过渡如下：</p>
-<p><img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/07-Layers/image.3te260424lu0.webp" alt="img"></p>
-<p><code dir="auto">一些</code>的原因：若勾选<code dir="auto">Ordered Interruption</code>则只有优先级比 A->B 高的才能打断</p>
-<p>过渡的优先级从上到下依次降低，即优先级<code dir="auto">A->B</code>><code dir="auto">A->C</code>><code dir="auto">A->D</code></p>
-<ul>
-<li>
-<p>如果勾选<code dir="auto">Ordered Interruption</code></p>
-<p>如果此时 A->B 的切换触发，则会中断 A->C，触发 A->B</p>
-<p>但如果此时 A->D 的切换触发，不会中断 A->C，还是触发 A->C</p>
-</li>
-<li>
-<p>如果不勾选<code dir="auto">Ordered Interruption</code></p>
-<p>此时 A->B 或 A->D 的切换触发都会中断 A->C</p>
-<p>如果 A->B 和 A->D 同时触发，则会优先激活 A->B，因为优先级较高</p>
-</li>
-</ul>
-<div class="sl-heading-wrapper level-h5"><h5 id="next-state下一状态">Next State(下一状态)</h5><a class="sl-anchor-link" href="#next-state下一状态"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Next State(下一状态)”</span></a></div>
-<p>如果将 A->B 的过渡的<code dir="auto">中断源(Interruption Source)</code>改为<code dir="auto">Next State</code>，A->B 和 A->D 就不能中断 A->C 了</p>
-<p>如果我们激活 A->B 后，又激活 B->D，那么 A->C 的过渡会被中断，转而切换到 D</p>
-<p>状态 B 上的过渡顺序也会有影响，但此时<code dir="auto">Ordered Interruption</code>无法勾选(因为 A->B 是在状态 A 上，不在状态 B 上，不参与 B 的排序)。状态 B 上的过渡顺序会决定同时触发时会使用哪一个过渡，例如下图过渡</p>
-<p><img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/07-Layers/image.1xdggp8q1bq8.webp" alt=""></p>
-<p>如果 B->C 和 B->D 同时触发，则优先执行 B->C</p>
-<div class="sl-heading-wrapper level-h5"><h5 id="current-state-then-next-state当前状态然后下一状态">Current State Then Next State(当前状态然后下一状态)</h5><a class="sl-anchor-link" href="#current-state-then-next-state当前状态然后下一状态"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Current State Then Next State(当前状态然后下一状态)”</span></a></div>
-<p>如果将 A->B 的过渡的<code dir="auto">中断源(Interruption Source)</code>改为<code dir="auto">Current State Then Next State</code>，则状态 A 与状态 B 的过渡都会被考虑在内</p>
-<p>如果 A->B 切换时，同时激活的 A->C, A->D, B->C 和 B->D（不勾选<code dir="auto">Ordered Interruption</code>）</p>
-<p>因<code dir="auto">Current State Then Next State(当前状态然后下一状态)</code>，先看状态 A 的过渡，由于 A->C 的优先级比 A->D 高，则将执行 A->C，因结果已出，不用再考虑下一状态 B</p>
-<div class="sl-heading-wrapper level-h5"><h5 id="current-state-then-next-state当前状态然后下一状态-1">Current State Then Next State(当前状态然后下一状态)</h5><a class="sl-anchor-link" href="#current-state-then-next-state当前状态然后下一状态-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Current State Then Next State(当前状态然后下一状态)”</span></a></div>
-<p>与上一个相反</p>
-<div class="sl-heading-wrapper level-h5"><h5 id="总结">总结</h5><a class="sl-anchor-link" href="#总结"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “总结”</span></a></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>名称</th><th>描述</th></tr></thead><tbody><tr><td>Ordered Interruption</td><td>优先级高于当前过渡才可以打断</td></tr><tr><td>无(None)</td><td>不可打断</td></tr><tr><td>Current State</td><td>前一个状态开始的状态过渡可以打断正在进行的状态过渡</td></tr><tr><td>Next State</td><td>从后一个状态开始的状态过渡可以打断正在进行的状态</td></tr><tr><td>Current State Then Next State</td><td>决定哪个动画 State 上的过渡节点优先权更高，先看前一个 State 的优先级如果没有被触发，再看后一个 State 的优先级，来达到不同的融合与打断效果</td></tr><tr><td>Next State Then Current State</td><td>决定哪个动画 State 上的过渡节点优先权更高，与上一个相反</td></tr></tbody></table>
-<div class="sl-heading-wrapper level-h3"><h3 id="condition">Condition</h3><a class="sl-anchor-link" href="#condition"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Condition”</span></a></div>
-<p>过渡条件，一个过渡可以有一个条件，也可以有多个条件，甚至没有条件</p>
-<ul>
-<li>
-<p>如果没有条件，但是勾选了<code dir="auto">Has Exit Time</code>，那么<code dir="auto">Exit Time</code>会被作为状态退出的条件，到达<code dir="auto">Exit Time</code>时，会切换到下一个状态</p>
-</li>
-<li>
-<p>如果有一个或多个条件，需要同时满足这些条件才能切换到下一个状态</p>
-</li>
-</ul>
-<p>条件可以通过参数设置，具体如下</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>参数类型</th><th>描述</th></tr></thead><tbody><tr><td>Int 型</td><td>可选择 Greater（>）、Less（&#x3C;）、Equals（==）、NotEqual（!=）指定的数作为过渡条件</td></tr><tr><td>Float 型</td><td>可选择 Greater（>）、Less（&#x3C;）指定的数作为过渡条件</td></tr><tr><td>Bool 型</td><td>可选择指定值（true or false）作为过渡条件</td></tr><tr><td>Trigger</td><td>条件为 true 时触发状态过渡</td></tr></tbody></table>
-<p>如果<code dir="auto">Has Exit Time</code>勾选了，并且过渡还有一个或多个条件，那么过渡需要同时满足到达<code dir="auto">Exit Time</code>，同时条件全为 true，才会切换到下一个 state</p>
+</script>  <starlight-lang-select><label style="--sl-select-width: 7em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">言語の選択</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path fill-rule="evenodd" d="M8.516 3a.94.94 0 0 0-.941.94v1.15H2.94a.94.94 0 1 0 0 1.882h7.362a7.422 7.422 0 0 1-1.787 3.958 7.42 7.42 0 0 1-1.422-2.425.94.94 0 1 0-1.774.627 9.303 9.303 0 0 0 1.785 3.043 7.422 7.422 0 0 1-4.164 1.278.94.94 0 1 0 0 1.881 9.303 9.303 0 0 0 5.575-1.855 9.303 9.303 0 0 0 4.11 1.74l-.763 1.525a.968.968 0 0 0-.016.034l-1.385 2.77a.94.94 0 1 0 1.683.841l1.133-2.267h5.806l1.134 2.267a.94.94 0 0 0 1.683-.841l-1.385-2.769a.95.95 0 0 0-.018-.036l-3.476-6.951a.94.94 0 0 0-1.682 0l-1.82 3.639a7.423 7.423 0 0 1-3.593-1.256 9.303 9.303 0 0 0 2.27-5.203h1.894a.94.94 0 0 0 0-1.881H9.456V3.94A.94.94 0 0 0 8.516 3Zm6.426 11.794a1.068 1.068 0 0 1-.02.039l-.703 1.407h3.924l-1.962-3.924-1.24 2.478Z" clip-rule="evenodd"/></svg> <select autocomplete="off" class="astro-4yphtoen"> <option value="/summary/layers/" class="astro-4yphtoen">简体中文</option><option value="/zh-tw/summary/layers/" class="astro-4yphtoen">正體中文</option><option value="/en/summary/layers/" class="astro-4yphtoen">English</option><option value="/ja/summary/layers/" selected class="astro-4yphtoen">日本語</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label> </starlight-lang-select> </div>  </div> </div> </div> </nav> <div class="main-frame astro-vrdttmbt">  <script type="module">const a=document.getElementById("starlight__sidebar"),n=a?.querySelector("sl-sidebar-state-persist"),o="sl-sidebar-state",i=()=>{let t=[];const e=n?.dataset.hash||"";try{const s=sessionStorage.getItem(o),r=JSON.parse(s||"{}");Array.isArray(r.open)&&r.hash===e&&(t=r.open)}catch{}return{hash:e,open:t,scroll:a?.scrollTop||0}},c=t=>{try{sessionStorage.setItem(o,JSON.stringify(t))}catch{}},d=()=>c(i()),l=(t,e)=>{const s=i();s.open[e]=t,c(s)};n?.addEventListener("click",t=>{if(!(t.target instanceof Element))return;const e=t.target.closest("summary")?.closest("details");if(!e)return;const s=e.querySelector("sl-sidebar-restore"),r=parseInt(s?.dataset.index||"");isNaN(r)||l(!e.open,r)});addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"&&d()});addEventListener("pageHide",d);</script> <div class="lg:sl-flex astro-67yu43on"> <aside class="right-sidebar-container print:hidden astro-67yu43on"> <div class="right-sidebar astro-67yu43on"> <div class="lg:sl-hidden astro-pb3aqygn"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-doynk5tl"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-doynk5tl"><details id="starlight__mobile-toc" class="astro-doynk5tl"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-doynk5tl"><span class="toggle sl-flex astro-doynk5tl">目次<svg aria-hidden="true" class="caret astro-doynk5tl astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-doynk5tl"></span></summary><div class="dropdown astro-doynk5tl"><ul class="isMobile astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">概要</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#レイヤー" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">レイヤー</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#状態ステート" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">状態（ステート）</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#状態の追加" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">状態の追加</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#色" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">色</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#状態の設定" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">状態の設定</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#transition遷移" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Transition（遷移）</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#過渡トランジション" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">過渡（トランジション）</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#settings" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Settings</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#condition条件" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Condition（条件）</span> </a>  </li> </ul>  </li> </ul> </div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C181hMzK.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-pb3aqygn"><div class="sl-container astro-pb3aqygn"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">目次</h2><ul class="astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">概要</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#レイヤー" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">レイヤー</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#状態ステート" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">状態（ステート）</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#状態の追加" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">状態の追加</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#色" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">色</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#状態の設定" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">状態の設定</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#transition遷移" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Transition（遷移）</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#過渡トランジション" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">過渡（トランジション）</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#settings" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Settings</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#condition条件" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Condition（条件）</span> </a>  </li> </ul>  </li> </ul> </nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.CKWWgpjV.js"></script></div></div> </div> </aside> <div class="main-pane astro-67yu43on">  <main data-pagefind-body class="astro-bguv2lll" lang="ja" dir="ltr">    <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <h1 id="_top" class="astro-j6tvhyss">アニメーターレイヤー</h1>  </div> </div>  <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <div class="sl-markdown-content"> <aside aria-label="免責事項" class="starlight-aside starlight-aside--caution"><p class="starlight-aside__title" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="starlight-aside__icon"><path d="M12 16C11.8022 16 11.6089 16.0587 11.4444 16.1686C11.28 16.2784 11.1518 16.4346 11.0761 16.6173C11.0004 16.8001 10.9806 17.0011 11.0192 17.1951C11.0578 17.3891 11.153 17.5673 11.2929 17.7071C11.4327 17.847 11.6109 17.9422 11.8049 17.9808C11.9989 18.0194 12.2 17.9996 12.3827 17.9239C12.5654 17.8482 12.7216 17.72 12.8315 17.5556C12.9413 17.3911 13 17.1978 13 17C13 16.7348 12.8946 16.4805 12.7071 16.2929C12.5196 16.1054 12.2652 16 12 16ZM22.67 17.47L14.62 3.47003C14.3598 3.00354 13.9798 2.61498 13.5192 2.3445C13.0586 2.07401 12.5341 1.9314 12 1.9314C11.4659 1.9314 10.9414 2.07401 10.4808 2.3445C10.0202 2.61498 9.64019 3.00354 9.38 3.47003L1.38 17.47C1.11079 17.924 0.966141 18.441 0.960643 18.9688C0.955144 19.4966 1.089 20.0166 1.34868 20.4761C1.60837 20.9356 1.9847 21.3185 2.43968 21.5861C2.89466 21.8536 3.41218 21.9964 3.94 22H20.06C20.5921 22.0053 21.1159 21.8689 21.5779 21.6049C22.0399 21.341 22.4234 20.9589 22.689 20.4978C22.9546 20.0368 23.0928 19.5134 23.0895 18.9814C23.0862 18.4493 22.9414 17.9277 22.67 17.47ZM20.94 19.47C20.8523 19.626 20.7245 19.7556 20.5697 19.8453C20.4149 19.935 20.2389 19.9815 20.06 19.98H3.94C3.76111 19.9815 3.5851 19.935 3.43032 19.8453C3.27553 19.7556 3.14765 19.626 3.06 19.47C2.97223 19.318 2.92602 19.1456 2.92602 18.97C2.92602 18.7945 2.97223 18.622 3.06 18.47L11.06 4.47003C11.1439 4.30623 11.2714 4.16876 11.4284 4.07277C11.5855 3.97678 11.766 3.92599 11.95 3.92599C12.134 3.92599 12.3145 3.97678 12.4716 4.07277C12.6286 4.16876 12.7561 4.30623 12.84 4.47003L20.89 18.47C20.9892 18.6199 21.0462 18.7937 21.055 18.9732C21.0638 19.1527 21.0241 19.3312 20.94 19.49V19.47ZM12 8.00003C11.7348 8.00003 11.4804 8.10538 11.2929 8.29292C11.1054 8.48046 11 8.73481 11 9.00003V13C11 13.2652 11.1054 13.5196 11.2929 13.7071C11.4804 13.8947 11.7348 14 12 14C12.2652 14 12.5196 13.8947 12.7071 13.7071C12.8946 13.5196 13 13.2652 13 13V9.00003C13 8.73481 12.8946 8.48046 12.7071 8.29292C12.5196 8.10538 12.2652 8.00003 12 8.00003Z"></path></svg>免責事項</p><div class="starlight-aside__content"><p>本ドキュメントは gemini-3-flash-preview によって翻訳されており、文法上の誤りや不正確な表現が含まれている可能性があります。正確な情報については、簡体字中国語版をご参照ください。</p></div></aside>
 <blockquote>
-<p>一个过渡至少要有一个条件（Has Exit Time 可以作为一个条件），否则过渡将会被忽略(不会被执行进入下一个状态)</p>
+<p>Unity のレイヤーの仕組み。モデルはどうやって変更されるのかな？</p>
 </blockquote>
-<p>注：<em>Trigger 貌似在 VRChat 中没有作用，至少我不知道</em></p> </div> <footer class="sl-flex astro-3yyafb3n"> <div class="meta sl-flex astro-3yyafb3n">   </div> <div class="pagination-links print:hidden astro-u2l5gyhi" dir="ltr"> <a href="/ja/summary/parameters/" rel="prev" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg> <span class="astro-u2l5gyhi"> 前へ <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">Parameters</span> </span> </a> <a href="/ja/summary/menu/" rel="next" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> <span class="astro-u2l5gyhi"> 次へ <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">VRChat Menu</span> </span> </a> </div>   </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>
+<p>異なるレイヤーの状態は同時に発生できるけど、同じレイヤー内では一度に1つの状態しか実行できないんだ。</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="レイヤー">レイヤー</h2><a class="sl-anchor-link" href="#レイヤー"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “レイヤー”</span></a></div>
+<p><code dir="auto">+</code> をクリックするとレイヤーを追加できるよ。レイヤーの隣にある歯車アイコンをクリックすると、小さなウィンドウが出てきて、そのレイヤーに対応するパラメータを設定できるんだ。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>説明</th></tr></thead><tbody><tr><td>Weight(ウェイト)</td><td>この層の重み。0 はその層が効かないことを表し、1 はその層のアニメーションが完全に表現されることを表すよ。</td></tr><tr><td>Mask(マスク)</td><td>この層で使用されるマスク。アニメーションの再生部位を制限できるんだ。例えば上半身だけアニメーションを再生したい場合、上半身に定義したマスクを使えばいい。設定すると、そのレイヤーの上に「M」の小さなアイコンが表示されるよ。</td></tr><tr><td>Blending</td><td>他の層と混合するモード。</td></tr><tr><td><em>Override</em></td><td>上の層の、マスクに対応する部位を上書きするよ。</td></tr><tr><td><em>Additive</em></td><td>前のレイヤーのアニメーションの上に加算されるよ。</td></tr><tr><td>Sync</td><td>他の層のステートマシンを再利用するんだ。</td></tr><tr><td>IK Pass</td><td>インバースキネマティクス（逆運動学）。</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h2"><h2 id="状態ステート">状態（ステート）</h2><a class="sl-anchor-link" href="#状態ステート"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “状態（ステート）”</span></a></div>
+<p>状態とはレイヤーの中にある「小さな四角」のことで、アニメーションをドラッグした時に自動的に生成される「モノ」のことだよ。</p>
+<p>新しいレイヤーを作ると、3つの状態が見えるはず。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">状態名</th><th align="left">簡潔な説明</th></tr></thead><tbody><tr><td align="left">Entry</td><td align="left">入口。遷移（トランジション）に従ってデフォルトの状態に入るよ。</td></tr><tr><td align="left">Any State</td><td align="left">任意の状態。条件さえ満たせば、どこからでも遷移先へジャンプできるんだ。</td></tr><tr><td align="left">Exit</td><td align="left">出口。「Entry」に戻るよ。</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="状態の追加">状態の追加</h3><a class="sl-anchor-link" href="#状態の追加"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “状態の追加”</span></a></div>
+<p>空白部分で右クリックして <code dir="auto">Empty</code>（空の状態）を追加することもできるし、アニメーションファイルを <code dir="auto">Animator</code> ウィンドウにドラッグして状態を追加することもできるよ。</p>
+<p>もし <code dir="auto">Project</code> ウィンドウでアニメーションファイルを選択しているなら、右クリックの <code dir="auto">From Selected Clip</code> から状態を作ることもできるけど、直接ドラッグするのが一番手っ取り早いかな。</p>
+<p><em>最初に作った状態はデフォルトでオレンジ色になるんだ。これはデフォルトの状態を意味していて、<code dir="auto">Animator</code> が開始時に再生するよ。状態の中にアニメーションがあれば、それも再生されるんだ。</em></p>
+<div class="sl-heading-wrapper level-h3"><h3 id="色">色</h3><a class="sl-anchor-link" href="#色"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “色”</span></a></div>
+<p>オレンジ色：デフォルトの状態。つまり、入った瞬間に実行されるアニメーション。</p>
+<p>灰色：遷移（トランジション）によって条件を満たした時に実行されるアニメーション。</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="状態の設定">状態の設定</h3><a class="sl-anchor-link" href="#状態の設定"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “状態の設定”</span></a></div>
+<p>各状態にはアニメーションを1つ含めることができて、その状態にいる間、<code dir="auto">Animator</code> コンポーネントがあるオブジェクトはそのアニメーションを再生するよ。状態を選択すると、次のようなオプションがあるんだ。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>名称</th><th>説明</th></tr></thead><tbody><tr><td>Motion</td><td>状態に紐付けられたアニメーション（Animation）。</td></tr><tr><td>速度(Speed)</td><td>アニメーションの再生速度。</td></tr><tr><td>乗数(Multiplier)</td><td>Speed * 指定したパラメータ（float）を実行時の再生速度にするよ。</td></tr><tr><td>Motion Time</td><td>正規化された時間。指定したパラメータ（float、範囲は 0~1）をアニメーションの再生時間として使うんだ（これを使ってダイヤルスイッチとかが作れるよ）。</td></tr><tr><td>ミラー(Mirror)</td><td>反転再生。「パラメータ(Parameter)」をオンにすると、指定したパラメータ（bool）を反転のスイッチにできるよ。</td></tr><tr><td>サイクルオフセット(Cycle Offset)</td><td>ループのオフセット量。ループアニメーションを同期させるのに使えて、正規化された時間（範囲は 0~1）を使うんだ。パラメータで制御もできるよ。</td></tr><tr><td>Foot IK</td><td>人型（Humanoid）アニメーション専用。キャラの足に IK を使うかどうか。</td></tr><tr><td>Write Default</td><td>次の状態に移る時に、この状態で加えた変更をリセットするよ（この状態で使っていないパラメータをデフォルト値に初期化するんだ）。</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="transition遷移">Transition（遷移）</h3><a class="sl-anchor-link" href="#transition遷移"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Transition（遷移）”</span></a></div>
+<p>現在の状態の遷移を表示するよ。選択した後の内容はレイヤーで選択した時と同じだね。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>名称</th><th>説明</th></tr></thead><tbody><tr><td>Solo</td><td>これにチェックを入れると、この遷移だけが有効になり、他は無効になるよ。</td></tr><tr><td>Mute</td><td>これにチェックを入れると、この遷移が無効になるんだ。</td></tr></tbody></table>
+<p><em>もし <code dir="auto">Solo</code> と <code dir="auto">Mute</code> の両方にチェックを入れたら、<code dir="auto">Mute</code> が優先されるよ。</em></p>
+<div class="sl-heading-wrapper level-h2"><h2 id="過渡トランジション">過渡（トランジション）</h2><a class="sl-anchor-link" href="#過渡トランジション"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “過渡（トランジション）”</span></a></div>
+<p>状態間の切り替え条件を表すよ。通常、ある状態から別の状態へ切り替えるための1つまたは複数の条件があるんだ。</p>
+<p>状態を右クリックして <code dir="auto">Make Transition</code> を選び、別の状態を選択すれば遷移が作れるよ。遷移の中で対応する条件を追加できるんだ。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>名称</th><th>説明</th></tr></thead><tbody><tr><td>Solo</td><td>これにチェックを入れると、この遷移だけが有効になり、他は無効になるよ。</td></tr><tr><td>Mute</td><td>これにチェックを入れると、この遷移が無効になるんだ。</td></tr></tbody></table>
+<p><em>もし <code dir="auto">Solo</code> と <code dir="auto">Mute</code> の両方にチェックを入れたら、<code dir="auto">Mute</code> が優先されるよ。</em></p>
+<p>複数の遷移がある場合は、位置（上下）を調整して優先順位を決められるんだ（上が下より優先度が高いよ）。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>名称</th><th>説明</th></tr></thead><tbody><tr><td>Name Field</td><td>遷移に名前を付けられるよ。2つの状態の間に複数の遷移がある時に区別するのに便利。</td></tr><tr><td>Has Exit Time</td><td>終了時間を条件にするかどうか。</td></tr></tbody></table>
+<p>終了時間は特殊な遷移条件で、パラメータに依存せず、設定された終了タイミングを条件として状態を切り替えるんだ。</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="settings">Settings</h3><a class="sl-anchor-link" href="#settings"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Settings”</span></a></div>
+<p>遷移のいくつかのパラメータ設定だよ。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>名称</th><th>説明</th></tr></thead><tbody><tr><td>終了時間(Exit Time)</td><td><code dir="auto">Has Exit Time</code> にチェックが入っている場合に設定できるよ。アニメーションを終了する正規化された時間を設定するんだ（単位：前の状態のアニメーションの長さ。オブジェクトの起動アニメーションや空のアニメーションなら秒単位と考えてもいいよ）。<br>例えば 0.75 に設定すると、アニメーションが 75% まで再生された時に <code dir="auto">true</code> になり、他の条件がなければそのまま次の状態に切り替わるんだ。<br>もし exit time が 1 未満なら、状態がループするたびにその位置で（アニメーションがループ設定かに関わらず、状態は常にループするよ）条件が true になる。例えば 1 回目の 75%、2 回目の 75%……といった感じだね。<br>もし exit time が 1 より大きいなら、条件の判定は 1 回だけ。例えば 3.5 なら、アニメーションが 3 回ループした後、4 回目の 50% に達した時に true になるよ。</td></tr><tr><td>固定期間(Fixed Duration)</td><td>チェックを入れると、次の「遷移期間(Transition Duration)」が秒単位になるよ。<br>チェックを外すと、次の「遷移期間(Transition Duration)」が（前の状態の）パーセンテージになるんだ（1 は 100%）。</td></tr><tr><td>遷移期間(Transition Duration)</td><td>遷移にかかる時間。2 つの状態が切り替わる時、普通は一瞬で変わるんじゃなくて、スムーズに混ざりながら変わるんだ。このプロパティはそのスムーズに混ざる時間を設定するものだよ。</td></tr><tr><td>遷移オフセット(Transition Offset)</td><td>状態が再生を開始する時の時間のオフセット。つまり、次の状態がどこから始まるか。値は次の状態のパーセンテージで、1 は 100% だよ。<br>例えば 0.5 に設定すると、次の状態に切り替わった時に 50% の位置から再生が始まるんだ。</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h4"><h4 id="遷移グラフ">遷移グラフ</h4><a class="sl-anchor-link" href="#遷移グラフ"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “遷移グラフ”</span></a></div>
+<p>上のパラメータは手動で書き換えるだけじゃなくて、遷移グラフでプレビューしたり修正したりもできるよ。</p>
+<p><img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/07-Layers/image.d1zgl4fkjnc.webp" alt="img"></p>
+<div class="sl-heading-wrapper level-h4"><h4 id="割り込みソースinterruption-source">割り込みソース(Interruption Source)</h4><a class="sl-anchor-link" href="#割り込みソースinterruption-source"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “割り込みソース(Interruption Source)”</span></a></div>
+<p>状態の遷移を途中で割り込ませることができるんだけど、かなり複雑だから、できるだけ使わない方がいいかもしれないね。</p>
+<p>例えばこんなレイヤーがあるとするよ。</p>
+<p><img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/07-Layers/image.3j6e8ox86fg0.webp" alt="img"></p>
+<div class="sl-heading-wrapper level-h5"><h5 id="current-state現在の状態">Current State（現在の状態）</h5><a class="sl-anchor-link" href="#current-state現在の状態"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Current State（現在の状態）”</span></a></div>
+<p>デフォルトでは A から C への切り替えがトリガーされると、ステートマシンは C への切り替えを開始し、C に切り替わるまで変更できないんだ。でも、A->C の遷移の <code dir="auto">割り込みソース(Interruption Source)</code> を <code dir="auto">Current State</code> に変えると、A->C の遷移が A 上の<strong>いくつか</strong>の遷移によって割り込まれるようになるよ。</p>
+<p>状態 A での遷移はこんな感じ：</p>
+<p><img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/07-Layers/image.3te260424lu0.webp" alt="img"></p>
+<p>「いくつか」の理由：<code dir="auto">Ordered Interruption</code> にチェックが入っている場合、A->C よりも優先順位が高いものだけが割り込めるんだ。</p>
+<p>遷移の優先順位は上から下に向かって低くなる。つまり、優先順位は <code dir="auto">A->B</code> > <code dir="auto">A->C</code> > <code dir="auto">A->D</code> になるよ。</p>
+<ul>
+<li>
+<p><code dir="auto">Ordered Interruption</code> にチェックが入っている場合</p>
+<p>この時 A->B の切り替えがトリガーされると、A->C は中断されて A->B が実行されるよ。
+でも、この時 A->D がトリガーされても、A->C は中断されず、そのまま A->C が実行されるんだ。</p>
+</li>
+<li>
+<p><code dir="auto">Ordered Interruption</code> にチェックが入っていない場合</p>
+<p>この時は A->B も A->D も、トリガーされれば A->C を中断するよ。
+もし A->B と A->D が同時にトリガーされたら、優先順位が高い A->B がアクティブになるんだ。</p>
+</li>
+</ul>
+<div class="sl-heading-wrapper level-h5"><h5 id="next-state次の状態">Next State（次の状態）</h5><a class="sl-anchor-link" href="#next-state次の状態"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Next State（次の状態）”</span></a></div>
+<p>もし A->C の遷移の <code dir="auto">割り込みソース(Interruption Source)</code> を <code dir="auto">Next State</code> に変えると、A->B や A->D は A->C を中断できなくなるんだ。</p>
+<p>でも、もし A->C が開始された後に、B->D がアクティブになったら、A->C の遷移は中断されて D に切り替わるよ。</p>
+<p>状態 B 上の遷移順序も影響するけど、この時は <code dir="auto">Ordered Interruption</code> にチェックは入れられないんだ（A->B は状態 A のものだし、状態 B の順序には参加しないからね）。状態 B 上の遷移順序は、同時にトリガーされた時にどっちを使うかを決めるよ。例えば下の図のような遷移だね。</p>
+<p><img src="https://github.com/yexca/picx-images-hosting/raw/master/2022-VRChat/07-Layers/image.1xdggp8q1bq8.webp" alt=""></p>
+<p>B->C と B->D が同時にトリガーされたら、優先的に B->C が実行されるよ。</p>
+<div class="sl-heading-wrapper level-h5"><h5 id="current-state-then-next-state現在の状態次に次の状態">Current State Then Next State（現在の状態、次に次の状態）</h5><a class="sl-anchor-link" href="#current-state-then-next-state現在の状態次に次の状態"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Current State Then Next State（現在の状態、次に次の状態）”</span></a></div>
+<p>A->C の遷移の <code dir="auto">割り込みソース(Interruption Source)</code> を <code dir="auto">Current State Then Next State</code> にすると、状態 A と状態 B 両方の遷移が考慮されるようになるよ。</p>
+<p>A->C への切り替え中に A->B, A->D, B->C, B->D が同時にアクティブになったとする（<code dir="auto">Ordered Interruption</code> はオフね）。</p>
+<p>この場合、まず状態 A の遷移を見て、A->B の優先順位が高いから A->B が実行されるよ。結果が出たから、次の状態 B のことはもう考えなくていいんだ。</p>
+<div class="sl-heading-wrapper level-h5"><h5 id="next-state-then-current-state次の状態次に現在の状態">Next State Then Current State（次の状態、次に現在の状態）</h5><a class="sl-anchor-link" href="#next-state-then-current-state次の状態次に現在の状態"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Next State Then Current State（次の状態、次に現在の状態）”</span></a></div>
+<p>さっきのと逆の順番で判定するよ。</p>
+<div class="sl-heading-wrapper level-h5"><h5 id="まとめ">まとめ</h5><a class="sl-anchor-link" href="#まとめ"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “まとめ”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>名称</th><th>説明</th></tr></thead><tbody><tr><td>Ordered Interruption</td><td>現在の遷移よりも優先度が高い場合のみ割り込み可能。</td></tr><tr><td>無(None)</td><td>割り込み不可。</td></tr><tr><td>Current State</td><td>前の状態から始まる遷移が、進行中の遷移を中断できる。</td></tr><tr><td>Next State</td><td>次の状態から始まる遷移が、進行中の遷移を中断できる。</td></tr><tr><td>Current State Then Next State</td><td>どの状態の遷移ノードの優先権が高いかを決定する。まず前の状態の優先順位を見て、トリガーされなければ次の状態の優先順位を見ることで、異なる融合や中断効果を得るよ。</td></tr><tr><td>Next State Then Current State</td><td>どの状態の遷移ノードの優先権が高いかを決定する。上と逆の順番。</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="condition条件">Condition（条件）</h3><a class="sl-anchor-link" href="#condition条件"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only">Section titled “Condition（条件）”</span></a></div>
+<p>遷移条件。1 つの遷移には 1 つの条件、複数の条件、あるいは条件なしの場合もあるよ。</p>
+<ul>
+<li>
+<p>条件がないけど <code dir="auto">Has Exit Time</code> にチェックが入っている場合、<code dir="auto">Exit Time</code> が終了条件として使われるよ。<code dir="auto">Exit Time</code> に達すると次の状態に切り替わるんだ。</p>
+</li>
+<li>
+<p>1 つまたは複数の条件がある場合、次の状態に切り替わるにはそれらの条件をすべて同時に満たす必要があるよ。</p>
+</li>
+</ul>
+<p>条件はパラメータを通じて設定できるんだ。具体的にはこんな感じ：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>パラメータ型</th><th>説明</th></tr></thead><tbody><tr><td>Int 型</td><td>Greater（>）、Less（&#x3C;）、Equals（==）、NotEqual（!=）で指定した数値を条件にするよ。</td></tr><tr><td>Float 型</td><td>Greater（>）、Less（&#x3C;）で指定した数値を条件にするよ。</td></tr><tr><td>Bool 型</td><td>指定した値（true または false）を条件にするよ。</td></tr><tr><td>Trigger</td><td>条件が true になった時に遷移をトリガーするよ。</td></tr></tbody></table>
+<p>もし <code dir="auto">Has Exit Time</code> にチェックが入っていて、さらに 1 つ以上の条件がある場合、遷移するには <code dir="auto">Exit Time</code> に到達し、かつ全ての条件が true である必要があるんだ。</p>
+<blockquote>
+<p>遷移には少なくとも 1 つの条件（Has Exit Time も 1 つの条件として数えるよ）が必要だよ。そうじゃないと、その遷移は無視されて次の状態には行けないんだ。</p>
+</blockquote>
+<p>注：<em>Trigger は VRChat ではあんまり使われないみたい。少なくともボクは使い道を知らないな。</em></p> </div> <footer class="sl-flex astro-3yyafb3n"> <div class="meta sl-flex astro-3yyafb3n">   </div> <div class="pagination-links print:hidden astro-u2l5gyhi" dir="ltr"> <a href="/ja/summary/parameters/" rel="prev" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg> <span class="astro-u2l5gyhi"> 前へ <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">Parameters</span> </span> </a> <a href="/ja/summary/menu/" rel="next" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> <span class="astro-u2l5gyhi"> 次へ <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">VRChat Menu</span> </span> </a> </div>   </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>
